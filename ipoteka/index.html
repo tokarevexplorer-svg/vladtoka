@@ -73,10 +73,10 @@ h1{margin:0;font-size:clamp(34px,7vw,52px);line-height:1.02;font-weight:800;lett
 .ql{font-size:18px;font-weight:700}
 .hint{font-size:14px;color:#6E6E7A}
 select{font-size:18px;font-weight:600;color:#111114;height:54px;padding:0 16px;border:1.5px solid #E1E1E8;border-radius:14px;background:#FFF;width:100%}
-.seg{display:grid;gap:4px;background:#FFF;border:1.5px solid #E1E1E8;border-radius:14px;padding:4px}
-.seg4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.seg{display:grid;gap:6px;background:#FFF;border:1.5px solid #E1E1E8;border-radius:14px;padding:5px}
+.seg4{grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr))}
 .seg2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.seg button{height:46px;border:0;border-radius:10px;font-size:16px;cursor:pointer;background:transparent;color:#26262C;font-weight:500}
+.seg button{height:44px;border:0;border-radius:9px;font-size:16px;cursor:pointer;background:transparent;color:#26262C;font-weight:500}
 .seg button[aria-pressed="true"]{background:#DCE4FF;color:#1D1DC9;font-weight:700}
 .money{position:relative}
 .money input{width:100%;height:56px;padding:0 44px 0 16px;border:1.5px solid #E1E1E8;border-radius:14px;background:#FFF;font-size:22px;font-weight:700;color:#111114}
@@ -92,10 +92,12 @@ select{font-size:18px;font-weight:600;color:#111114;height:54px;padding:0 16px;b
 .years::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#FFF;border:4px solid var(--c,#3CD070);box-shadow:0 2px 8px rgba(17,17,20,.22)}
 .range-scale{display:flex;justify-content:space-between;font-size:13px;color:#6E6E7A;margin-top:-2px}
 .err{font-size:14px;font-weight:600;color:#D13A2C}
-.nav{display:flex;gap:10px;flex-wrap:wrap}
-.btn{flex:1 1 160px;min-width:0;height:62px;border:0;border-radius:16px;background:#3A3AF4;color:#FFF;font-size:19px;font-weight:700;cursor:pointer}
+.nav{display:flex;flex-direction:column;gap:2px}
+.btn{width:100%;min-height:60px;padding:12px;border:0;border-radius:16px;background:#3A3AF4;color:#FFF;font-size:clamp(16px,4.6vw,18px);line-height:1.2;font-weight:700;cursor:pointer;text-wrap:balance}
 .btn:hover{background:#2D2DE0}
-.ghost{flex:0 0 auto;height:62px;padding:0 22px;border-radius:16px;border:1.5px solid #D9D9E1;background:#FFF;color:#111114;font-size:17px;font-weight:600;cursor:pointer}
+.ghost{order:2;align-self:center;display:inline-flex;align-items:center;gap:4px;padding:12px 16px 4px;border:0;background:none;color:#6E6E7A;font-size:16px;font-weight:600;cursor:pointer}
+.ghost:hover{color:#111114}
+.ghost svg{width:18px;height:18px}
 
 /* ---------- загрузка: дом собирается, зажигается свет ---------- */
 .loading{min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:48px 24px;background:#14182E}
@@ -112,20 +114,20 @@ select{font-size:18px;font-weight:600;color:#111114;height:54px;padding:0 16px;b
 .tint{background-color:#93AEFD;animation:tint 12s ease-in-out infinite}
 .hero-res{aspect-ratio:5/2;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .cut{display:block;width:100%;height:100%;object-fit:contain}
-.res{padding:32px clamp(20px,6vw,72px) 40px;display:flex;flex-direction:column;gap:24px}
-.kick{font-size:clamp(17px,3.4vw,20px);font-weight:500;color:#45454F}
+.res{padding:32px clamp(20px,6vw,72px) 40px;display:flex;flex-direction:column;gap:30px}
+.kick{font-size:clamp(15px,3vw,17px);line-height:1.35;font-weight:500;color:#6E6E7A}
 .big{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:end}
 .big .n{grid-row:1/3;font-size:clamp(96px,26vw,176px);font-weight:800;line-height:.88;letter-spacing:-.045em}
 .big .emo{align-self:start;width:clamp(56px,13vw,96px);height:auto;animation:pop .5s cubic-bezier(.3,1.6,.5,1) both .15s}
 @keyframes pop{from{opacity:0;transform:scale(.3) rotate(-25deg)}to{opacity:1;transform:none}}
 .big .u{font-size:clamp(22px,5vw,32px);font-weight:700;line-height:1.1}
 .famtag{display:inline-flex;align-self:flex-start;gap:8px;align-items:center;background:#E8FBEF;color:#0F5A2A;border-radius:999px;padding:6px 14px;font-size:15px;font-weight:700}
-.cap{margin:0;font-size:clamp(21px,4.2vw,26px);line-height:1.3;font-weight:600}
+.cap{margin:0;font-family:'Literata',Georgia,serif;font-size:clamp(19px,3.8vw,22px);line-height:1.45;font-weight:400;color:#26262C}
 .bar{position:relative;height:26px;border-radius:13px;background:#E9E9EF;overflow:hidden}
 .bar div{position:absolute;top:0;bottom:0}
 .ticks{position:relative;height:34px;font-size:12px;line-height:1.25;color:#6E6E7A}
 .ticks span{position:absolute;white-space:nowrap}
-.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:#26262C}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:#6E6E7A}
 .legend span{display:inline-flex;align-items:center;gap:8px}
 .legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
 details.fold{background:#F2F2F5;border-radius:20px}
@@ -136,7 +138,7 @@ details.fold[open]>summary .chev{transform:rotate(180deg)}
 details.fold>summary img{width:34px;height:34px}
 .fold-body{padding:0 20px 20px;display:flex;flex-direction:column;gap:14px}
 .p18{margin:0;font-size:17px;line-height:1.45;color:#26262C}
-.earn{font-size:19px;font-weight:600;color:#111114}
+.earn{font-size:16px;line-height:1.5;font-weight:500;color:#6E6E7A}
 .facts{display:flex;flex-wrap:wrap;gap:10px}
 .fact{flex:1 1 200px;background:#FFF;border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
 .fact b{font-size:24px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
@@ -251,7 +253,7 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
       </div>
 
       <div class="nav">
-        <button class="ghost" type="button" id="back" hidden>Назад</button>
+        <button class="ghost" type="button" id="back" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Назад</button>
         <button class="btn" type="button" id="next">Далее</button>
         <button class="btn" type="submit" id="go" hidden>Сделать ипотеку доступной</button>
       </div>
