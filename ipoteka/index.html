@@ -172,7 +172,17 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
 .src-body{padding:0 8px;display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.55;color:#6E6E7A}
 @media (prefers-reduced-motion:reduce){.tint,.spark,.big .emo,.kids-row img,.step{animation:none!important}.fl{transition:none}html{scroll-behavior:auto}}
 </style>
-<!-- Яндекс Метрика: номер счетчика вписать в METRIKA_ID ниже (0 — метрика выключена) -->
+<!-- Yandex.Metrika counter 114391185 (счетчик «Ипотека», Вебвизор включен) -->
+<script>
+  (function (m, e, t, r, i, k, a) {
+    m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+    m[i].l = 1 * new Date();
+    for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+    k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a);
+  })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=114391185', 'ym');
+  ym(114391185, 'init', { ssr: true, webvisor: true, clickmap: true, referrer: document.referrer, url: location.href, accurateTrackBounce: true, trackLinks: true });
+</script>
+<!-- /Yandex.Metrika counter -->
 </head>
 <body>
 <div class="page">
@@ -242,12 +252,12 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
       <div class="step" data-step="3" hidden>
         <div class="q">
           <label class="ql" for="q-down" id="down-label">Сколько накопил на первый взнос?</label>
-          <div class="money"><input id="q-down" type="text" inputmode="numeric" autocomplete="off" placeholder="0"><span aria-hidden="true">₽</span></div>
+          <div class="money"><input id="q-down" class="ym-disable-keys" type="text" inputmode="numeric" autocomplete="off" placeholder="0"><span aria-hidden="true">₽</span></div>
           <span class="hint" id="down-hint"></span>
         </div>
         <div class="q">
           <label class="ql" for="q-inc" id="inc-label">Сколько получаешь на руки в&nbsp;месяц?</label>
-          <div class="money"><input id="q-inc" type="text" inputmode="numeric" autocomplete="off" placeholder="0" enterkeyhint="go"><span aria-hidden="true">₽</span></div>
+          <div class="money"><input id="q-inc" class="ym-disable-keys" type="text" inputmode="numeric" autocomplete="off" placeholder="0" enterkeyhint="go"><span aria-hidden="true">₽</span></div>
           <span class="err" role="alert" id="inc-err" hidden>Напиши доход: без него банк даже не разговаривает</span>
         </div>
       </div>
@@ -328,11 +338,7 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
   }
 
   // ---------- метрика ----------
-  var METRIKA_ID = 0; // номер счетчика Яндекс Метрики, например 98765432
-  if (METRIKA_ID) {
-    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
-    window.ym(METRIKA_ID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
-  }
+  var METRIKA_ID = 114391185; // счетчик «Ипотека», код подключен в <head>
   var sent = {};
   function track(goal, once) {
     if (once && sent[goal]) return; sent[goal] = 1;
