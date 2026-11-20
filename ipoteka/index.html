@@ -430,7 +430,14 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
   // ---------- форма ----------
   var $ = function (id) { return document.getElementById(id); };
   var sel = $('q-region');
-  REGIONS.forEach(function (r, idx) { var o = document.createElement('option'); o.value = String(idx); o.textContent = r[0]; sel.appendChild(o); });
+  // наверху — Петербург и Москва с областями, ниже все регионы по алфавиту
+  var TOP = ['Санкт-Петербург', 'Москва', 'Ленинградская область', 'Московская область'];
+  function opt(parent, idx) { var o = document.createElement('option'); o.value = String(idx); o.textContent = REGIONS[idx][0]; parent.appendChild(o); }
+  var gTop = document.createElement('optgroup'), gAll = document.createElement('optgroup');
+  gTop.label = 'Петербург и Москва'; gAll.label = 'Все регионы';
+  TOP.forEach(function (name) { for (var i = 0; i < REGIONS.length; i++) if (REGIONS[i][0] === name) { opt(gTop, i); break; } });
+  REGIONS.forEach(function (r, idx) { opt(gAll, idx); });
+  sel.appendChild(gTop); sel.appendChild(gAll);
   sel.value = String(S.regionIdx);
   sel.addEventListener('change', function () { S.regionIdx = parseInt(sel.value, 10) || 0; hints(); });
 
