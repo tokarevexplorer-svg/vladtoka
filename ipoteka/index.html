@@ -37,16 +37,16 @@ main{max-width:820px;margin:0 auto;background:#FFF;border-radius:clamp(0px,3vw,2
 .stage{position:relative;width:100%;aspect-ratio:1513/753}
 .stage img{position:absolute;inset:0;width:100%;height:100%;display:block}
 .tv{position:absolute;left:74.09%;top:23.37%;width:21.55%;height:32.01%;clip-path:polygon(0% 11.6%,100% 0.0%,100% 99.6%,0% 90.5%);image-rendering:pixelated}
-.cta-wrap{position:relative;margin:4px 0 26px;display:flex;justify-content:center}
-.cta{position:relative;z-index:2;height:58px;padding:0 40px;border-radius:16px;border:0;background:#3A3AF4;color:#FFF;font-size:19px;font-weight:700;cursor:pointer;box-shadow:0 5px 0 #1D1DA8,0 12px 24px rgba(29,29,168,.28);transition:transform .12s ease,box-shadow .12s ease,background .12s}
+.cta-wrap{position:relative;--g:clamp(16px,2.6vw,28px);margin:calc(var(--g) - 0.534%) 0 calc(var(--g) + 5px);display:flex;justify-content:center}
+.cta{position:relative;z-index:2;height:clamp(62px,6.2vw,72px);padding:0 clamp(46px,5.6vw,64px);border-radius:18px;border:0;background:#3A3AF4;color:#FFF;font-size:clamp(20px,2.3vw,24px);font-weight:700;cursor:pointer;box-shadow:0 5px 0 #1D1DA8,0 12px 24px rgba(29,29,168,.28);transition:transform .12s ease,box-shadow .12s ease,background .12s}
 .cta:hover{background:#2D2DE0}
 .cta:active{transform:translateY(4px);box-shadow:0 1px 0 #1D1DA8,0 6px 12px rgba(29,29,168,.25)}
 .spark{position:absolute;z-index:3;width:22px;height:22px;pointer-events:none;filter:drop-shadow(0 0 1.5px rgba(17,17,20,.55));animation:twinkle 1.8s ease-in-out infinite}
 .spark svg{display:block;width:100%;height:100%}
 .s1{left:-26px;top:-6px;animation-delay:0s}
-.s2{left:-14px;top:40px;width:14px;height:14px;animation-delay:.5s}
+.s2{left:-14px;top:66%;width:14px;height:14px;animation-delay:.5s}
 .s3{right:-28px;top:-2px;width:24px;height:24px;animation-delay:.9s}
-.s4{right:-12px;top:44px;width:13px;height:13px;animation-delay:1.3s}
+.s4{right:-12px;top:72%;width:13px;height:13px;animation-delay:1.3s}
 .s5{left:30%;top:-20px;width:15px;height:15px;animation-delay:.3s}
 @keyframes twinkle{0%,100%{opacity:.2;transform:scale(.55) rotate(0deg)}50%{opacity:1;transform:scale(1.1) rotate(20deg)}}
 
@@ -232,7 +232,7 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
           <div class="seg seg2" role="group" aria-labelledby="q-who" id="whos"></div>
         </div>
         <div class="q">
-          <div class="range-head"><label class="ql" for="q-years">За сколько лет хочешь закрыть ипотеку?</label><b id="years-val" aria-hidden="true">5 лет</b></div>
+          <div class="range-head"><label class="ql" for="q-years" id="years-label">За сколько лет хочешь закрыть ипотеку?</label><b id="years-val" aria-hidden="true">5 лет</b></div>
           <div class="yr"><div class="yr-glow" id="yr-glow"></div><input class="years" id="q-years" type="range" min="5" max="30" step="1" value="5" aria-describedby="years-hint"></div>
           <div class="range-scale" aria-hidden="true"><span>5 лет</span><span>30 лет</span></div>
           <span class="hint" id="years-hint"></span>
@@ -494,6 +494,8 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
     $('down-hint').textContent = 'Обычно банк хочет не меньше 20% от стоимости квартиры';
     $('down-label').textContent = S.pair ? 'Сколько накопили на первый взнос?' : 'Сколько накопил на первый взнос?';
     $('inc-label').textContent = S.pair ? 'Сколько получаете вдвоем на руки в месяц?' : 'Сколько получаешь на руки в месяц?';
+    $('years-label').textContent = S.pair ? 'За сколько лет хотите закрыть ипотеку?' : 'За сколько лет хочешь закрыть ипотеку?';
+    $('inc-err').textContent = (S.pair ? 'Напишите' : 'Напиши') + ' доход: без него банк даже не разговаривает';
   }
   hints();
 
@@ -605,7 +607,7 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
     var pc = function (x) { return (Math.max(0, x) / scale * 100).toFixed(2) + '%'; };
     var norm = Math.min(40, Hh), over = Math.max(0, Math.min(Hh, 168) - 40), rest = Math.max(0, 168 - Hh), lack = Math.max(0, Hh - 168);
     var Nm = NAMES[S.type][1];
-    var cap = c.noMortgage ? 'Взнос покрывает всю цену. Поздравляем, ты не целевая аудитория этого сайта.' : caption(Hr, S.pair, Nm, c.lastYear);
+    var cap = c.noMortgage ? 'Взнос покрывает всю цену. Поздравляем, ' + (S.pair ? 'вы' : 'ты') + ' не целевая аудитория этого сайта.' : caption(Hr, S.pair, Nm, c.lastYear);
     var emo = c.noMortgage ? 0 : bucket(Hr);
     var kicker = c.noMortgage ? 'Ипотека не нужна' : 'Чтобы ' + (c.fam ? 'семейная ипотека' : 'ипотека') + ' на ' + Y(S.years) + ' стала доступной, ' + (S.pair ? 'каждому из вас нужно работать' : 'работать нужно');
     var bigNum = c.noMortgage ? '0' : num(Hr);
@@ -654,8 +656,8 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
     // хотите работать меньше
     if (!c.noMortgage && FAMILY) {
       var kv = S.kids || 2;
-      h += '<details class="fold" id="kids"' + (keepOpen && keepOpen.kids ? ' open' : '') + '><summary><img src="emoji/baby.webp" width="34" height="34" alt="">Хотите работать меньше? ' + CHEV + '</summary><div class="fold-body">';
-      h += '<p class="p18"><b>Заведите детей.</b> Тогда вам будет доступна семейная ипотека: ставка ниже, платеж меньше.</p><p class="p18" style="font-weight:700">Сколько детей заводим?</p>';
+      h += '<details class="fold" id="kids"' + (keepOpen && keepOpen.kids ? ' open' : '') + '><summary><img src="emoji/baby.webp" width="34" height="34" alt="">' + (S.pair ? 'Хотите' : 'Хочешь') + ' работать меньше? ' + CHEV + '</summary><div class="fold-body">';
+      h += '<p class="p18"><b>' + (S.pair ? 'Заведите' : 'Заведи') + ' детей.</b> Тогда ' + (S.pair ? 'вам' : 'тебе') + ' будет доступна семейная ипотека: ставка ниже, платеж меньше.</p><p class="p18" style="font-weight:700">Сколько детей заводим?</p>';
       h += '<div class="kids-row" id="kids-row" aria-hidden="true"></div>';
       h += '<div class="kid-wrap"><input class="kid-range" id="kid-n" type="range" min="1" max="5" step="1" value="' + kv + '" aria-label="Сколько детей заводим"><div class="kid-ticks" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div>';
       h += '<span class="hint" id="kid-hint"></span>';
@@ -671,7 +673,7 @@ details.src[open]>summary .chev{transform:rotate(180deg)}
     h += '<a href="https://www.instagram.com/vlad.toka/" target="_blank" rel="noopener" id="sub">Подписаться в Instagram</a></div>';
 
     // копирование
-    var share = c.noMortgage ? 'Мне ипотека не нужна: взнос покрывает всю цену. Посчитай свои часы: vladtoka.pro/ipoteka'
+    var share = c.noMortgage ? (S.pair ? 'Нам' : 'Мне') + ' ипотека не нужна: взнос покрывает всю цену. Посчитай свои часы: vladtoka.pro/ipoteka'
       : 'Чтобы позволить себе ' + (c.fam ? 'семейную ипотеку' : 'ипотеку') + ' на ' + NAMES[S.type][2] + ', ' + (S.pair ? 'нам нужно работать по ' + Hr + ' ' + H(Hr) + ' в неделю каждому' : 'мне нужно работать ' + Hr + ' ' + H(Hr) + ' в неделю') + '. Посчитай свои часы: vladtoka.pro/ipoteka';
     h += '<div class="share-box"><div><button type="button" class="linkbtn" id="copy">Скопировать результат</button></div>';
     h += '<span role="status" class="hint" id="copy-msg"></span><div class="share" id="share-text">' + esc(share) + '</div></div>';
