@@ -3,48 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Сделай ипотеку доступной — калькулятор @vlad.toka</title>
-<meta name="description" content="Калькулятор для тех, кто не ноет, а считает: сколько часов в неделю нужно работать, чтобы ипотека стала доступной.">
+<title>Сделай ипотеку доступной — калькулятор возможностей @vlad.toka</title>
+<meta name="description" content="Калькулятор для тех, кто ищет возможности: сколько часов в неделю нужно работать, чтобы ипотека стала доступной.">
+<link rel="canonical" href="https://vladtoka.pro/ipoteka/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://vladtoka.pro/ipoteka/">
 <meta property="og:title" content="Сделай ипотеку доступной">
-<meta property="og:description" content="Ответь на шесть вопросов и узнай, сколько часов в неделю отделяет тебя от своей квартиры.">
+<meta property="og:description" content="Ответь на три вопроса и узнай, сколько часов в неделю отделяет тебя от квартиры мечты.">
 <meta property="og:image" content="https://vladtoka.pro/ipoteka/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#93AEFD">
-<link rel="canonical" href="https://vladtoka.pro/ipoteka/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Crect x='0.5' y='0.5' width='17' height='17' rx='5' fill='%2393AEFD'/%3E%3Cpath d='M4.5 13.5V8L9 4.5L13.5 8V13.5H10.5V10.5H7.5V13.5Z' fill='%23fff'/%3E%3C/svg%3E">
-<link rel="preload" href="/ipoteka/onest.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="onest.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-@font-face{font-family:'Onest';src:url('/ipoteka/onest.woff2') format('woff2');font-weight:400 800;font-style:normal;font-display:swap}
-@font-face{font-family:'Literata';src:url('/ipoteka/literata.woff2') format('woff2');font-weight:400 500;font-style:normal;font-display:swap}
+@font-face{font-family:'Onest';src:url('onest.woff2') format('woff2');font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:'Literata';src:url('literata.woff2') format('woff2');font-weight:400 500;font-style:normal;font-display:swap}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:#ECECEF;font-family:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#111114}
-a{color:#3A3AF4}a:hover{color:#2525C8}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:#ECECEF;font-family:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:#111114;overflow-x:hidden}
+a{color:#3A3AF4}
 button,input,select{font-family:inherit}
-button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #3A3AF4;outline-offset:2px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #3A3AF4;outline-offset:2px}
 input::placeholder{color:#A3A3AE}
 [hidden]{display:none!important}
-.page{min-height:100vh;padding:clamp(0px,3vw,32px) clamp(0px,3vw,32px) 48px}
-main{max-width:820px;margin:0 auto;background:#FFF;border-radius:clamp(0px,3vw,28px);overflow:hidden}
-@keyframes tint{0%,100%{background-color:#93AEFD}33%{background-color:#FF8A7A}66%{background-color:#FFD65A}}
-.tint{background-color:#93AEFD;animation:tint 12s ease-in-out infinite}
-.hero{aspect-ratio:2/1;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.cut{display:block;width:100%;height:100%;object-fit:contain}
-.hero-res{aspect-ratio:5/2;display:flex;align-items:center;justify-content:center;overflow:hidden}
-@media (max-width:600px){.hero{aspect-ratio:4/3}}
+.page{position:relative;z-index:1;min-height:100vh;padding:clamp(0px,3vw,32px) clamp(0px,3vw,32px) 48px}
+main{max-width:820px;margin:0 auto;background:#FFF;border-radius:clamp(0px,3vw,28px);overflow:hidden;box-shadow:0 1px 0 rgba(17,17,20,.04)}
+
+/* ---------- обложка ---------- */
+.hero{position:relative;background:#93AEFD;padding:clamp(14px,3vw,28px) clamp(10px,3vw,28px) 0;display:flex;flex-direction:column;align-items:center}
+.stage{position:relative;width:100%;aspect-ratio:1513/753}
+.stage img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tv{position:absolute;left:74.09%;top:23.37%;width:21.55%;height:32.01%;clip-path:polygon(0% 11.6%,100% 0.0%,100% 99.6%,0% 90.5%);image-rendering:pixelated}
+.cta-wrap{position:relative;margin:4px 0 26px;display:flex;justify-content:center}
+.cta{position:relative;z-index:2;height:58px;padding:0 40px;border-radius:16px;border:0;background:#3A3AF4;color:#FFF;font-size:19px;font-weight:700;cursor:pointer;box-shadow:0 5px 0 #1D1DA8,0 12px 24px rgba(29,29,168,.28);transition:transform .12s ease,box-shadow .12s ease,background .12s}
+.cta:hover{background:#2D2DE0}
+.cta:active{transform:translateY(4px);box-shadow:0 1px 0 #1D1DA8,0 6px 12px rgba(29,29,168,.25)}
+.spark{position:absolute;z-index:3;width:22px;height:22px;pointer-events:none;filter:drop-shadow(0 0 1.5px rgba(17,17,20,.55));animation:twinkle 1.8s ease-in-out infinite}
+.spark svg{display:block;width:100%;height:100%}
+.s1{left:-26px;top:-6px;animation-delay:0s}
+.s2{left:-14px;top:40px;width:14px;height:14px;animation-delay:.5s}
+.s3{right:-28px;top:-2px;width:24px;height:24px;animation-delay:.9s}
+.s4{right:-12px;top:44px;width:13px;height:13px;animation-delay:1.3s}
+.s5{left:30%;top:-20px;width:15px;height:15px;animation-delay:.3s}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.55) rotate(0deg)}50%{opacity:1;transform:scale(1.1) rotate(20deg)}}
+
 .wrap{padding:28px clamp(20px,6vw,72px) 40px;display:flex;flex-direction:column;gap:22px}
-.meta{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:13px;color:#6E6E7A}
-.meta .rub{display:inline-flex;align-items:center;gap:7px;color:#111114;font-weight:600}
+.meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:#6E6E7A}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:6px 12px;border-radius:999px;background:#F2F2F5;color:#111114;font-weight:600}
 h1{margin:0;font-size:clamp(34px,7vw,52px);line-height:1.02;font-weight:800;letter-spacing:-.025em}
 .sub{margin:0;font-size:clamp(20px,4vw,26px);line-height:1.2;font-weight:400}
 .lead{display:flex;flex-direction:column;gap:14px;font-family:'Literata',Georgia,serif;font-size:18px;line-height:1.55;color:#26262C}
 .lead p{margin:0}
-.box{background:#F2F2F5;border-radius:24px;padding:clamp(20px,4vw,32px);display:flex;flex-direction:column;gap:26px}
+
+/* ---------- форма: три вопроса ---------- */
+.box{background:#F2F2F5;border-radius:24px;padding:clamp(20px,4vw,32px);display:flex;flex-direction:column;gap:22px;scroll-margin-top:16px}
+.shead{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.shead .t{display:flex;flex-direction:column;gap:2px}
+.shead .t span{font-size:13px;color:#6E6E7A;font-weight:600}
+.shead .t b{font-size:24px;font-weight:800;letter-spacing:-.01em}
+.dots{display:flex;gap:6px}
+.dots i{width:26px;height:6px;border-radius:3px;background:#D9D9E3;transition:background .25s}
+.dots i.on{background:#3A3AF4}
+.step{display:flex;flex-direction:column;gap:24px;animation:stepIn .3s ease-out}
+@keyframes stepIn{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
 .q{display:flex;flex-direction:column;gap:10px}
 .ql{font-size:18px;font-weight:700}
 .hint{font-size:14px;color:#6E6E7A}
@@ -57,34 +81,45 @@ select{font-size:18px;font-weight:600;color:#111114;height:54px;padding:0 16px;b
 .money{position:relative}
 .money input{width:100%;height:56px;padding:0 44px 0 16px;border:1.5px solid #E1E1E8;border-radius:14px;background:#FFF;font-size:22px;font-weight:700;color:#111114}
 .money span{position:absolute;right:16px;top:15px;font-size:20px;font-weight:600;color:#6E6E7A}
-/* ползунок срока */
 .range-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.range-head b{font-size:22px;font-weight:800;color:#1D1DC9;white-space:nowrap}
-.years{--p:100%;-webkit-appearance:none;appearance:none;width:100%;height:32px;margin:0;background:transparent;cursor:pointer}
-.years::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:linear-gradient(to right,#3A3AF4 var(--p),#D9D9E3 var(--p))}
-.years::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:28px;height:28px;margin-top:-11px;border-radius:50%;background:#FFF;border:3px solid #3A3AF4;box-shadow:0 1px 4px rgba(17,17,20,.18)}
-.years::-moz-range-track{height:6px;border-radius:3px;background:#D9D9E3}
-.years::-moz-range-progress{height:6px;border-radius:3px;background:#3A3AF4}
-.years::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#FFF;border:3px solid #3A3AF4;box-shadow:0 1px 4px rgba(17,17,20,.18)}
-.range-scale{display:flex;justify-content:space-between;font-size:13px;color:#6E6E7A;margin-top:-4px}
+.range-head b{font-size:22px;font-weight:800;white-space:nowrap;transition:color .2s}
+.yr{position:relative;height:34px}
+.yr-glow{position:absolute;left:0;right:0;top:9px;height:16px;border-radius:8px;background:linear-gradient(90deg,#FFFFFF 0%,#3CD070 32%,#FFD23F 64%,#FF3B30 100%);filter:blur(10px);opacity:.75;clip-path:inset(-20px calc(100% - var(--p)) -20px -20px)}
+.years{--p:40%;position:relative;-webkit-appearance:none;appearance:none;width:100%;height:34px;margin:0;background:transparent;cursor:pointer}
+.years::-webkit-slider-runnable-track{height:10px;border-radius:5px;background:linear-gradient(90deg,transparent var(--p),#E2E2EA var(--p)),linear-gradient(90deg,#FFFFFF 0%,#3CD070 32%,#FFD23F 64%,#FF3B30 100%);box-shadow:inset 0 0 0 1px rgba(17,17,20,.08)}
+.years::-moz-range-track{height:10px;border-radius:5px;background:linear-gradient(90deg,transparent var(--p),#E2E2EA var(--p)),linear-gradient(90deg,#FFFFFF 0%,#3CD070 32%,#FFD23F 64%,#FF3B30 100%)}
+.years::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:30px;height:30px;margin-top:-10px;border-radius:50%;background:#FFF;border:4px solid var(--c,#3CD070);box-shadow:0 2px 8px rgba(17,17,20,.22)}
+.years::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#FFF;border:4px solid var(--c,#3CD070);box-shadow:0 2px 8px rgba(17,17,20,.22)}
+.range-scale{display:flex;justify-content:space-between;font-size:13px;color:#6E6E7A;margin-top:-2px}
 .err{font-size:14px;font-weight:600;color:#D13A2C}
-.btn{height:62px;border:0;border-radius:16px;background:#3A3AF4;color:#FFF;font-size:19px;font-weight:700;cursor:pointer}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.btn{flex:1 1 160px;min-width:0;height:62px;border:0;border-radius:16px;background:#3A3AF4;color:#FFF;font-size:19px;font-weight:700;cursor:pointer}
 .btn:hover{background:#2D2DE0}
-/* загрузка */
-.loading{min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:48px 24px}
-@keyframes floorIn{0%{opacity:0;transform:translateY(-16px)}100%{opacity:1;transform:translateY(0)}}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
-.fl{opacity:0;animation:floorIn .32s ease-out forwards}
-.blink{animation:blink 1.2s ease-in-out infinite}
-.ltext{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.ghost{flex:0 0 auto;height:62px;padding:0 22px;border-radius:16px;border:1.5px solid #D9D9E1;background:#FFF;color:#111114;font-size:17px;font-weight:600;cursor:pointer}
+
+/* ---------- загрузка: дом собирается, зажигается свет ---------- */
+.loading{min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;padding:48px 24px;background:#14182E}
+.fl{opacity:0;transform:translateY(-14px);transition:opacity .16s ease-out,transform .16s ease-out}
+.fl.in{opacity:1;transform:none}
+.win{fill:#2C3360;transition:fill .18s ease}
+.lit .win{fill:#FFD65A;filter:drop-shadow(0 0 5px rgba(255,214,90,.9))}
+.ltext{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:#FFF}
 .ltext b{font-size:22px;font-weight:700}
-.ltext span{font-size:15px;color:#1E2A57}
-/* результат */
-.res{padding:32px clamp(20px,6vw,72px) 40px;display:flex;flex-direction:column;gap:26px}
+.ltext span{font-size:15px;color:#AEB6DD}
+
+/* ---------- результат ---------- */
+@keyframes tint{0%,100%{background-color:#93AEFD}33%{background-color:#FF8A7A}66%{background-color:#FFD65A}}
+.tint{background-color:#93AEFD;animation:tint 12s ease-in-out infinite}
+.hero-res{aspect-ratio:5/2;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cut{display:block;width:100%;height:100%;object-fit:contain}
+.res{padding:32px clamp(20px,6vw,72px) 40px;display:flex;flex-direction:column;gap:24px}
 .kick{font-size:clamp(17px,3.4vw,20px);font-weight:500;color:#45454F}
-.big{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-.big .n{font-size:clamp(96px,26vw,176px);font-weight:800;line-height:.88;letter-spacing:-.045em}
+.big{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:end}
+.big .n{grid-row:1/3;font-size:clamp(96px,26vw,176px);font-weight:800;line-height:.88;letter-spacing:-.045em}
+.big .emo{align-self:start;width:clamp(56px,13vw,96px);height:auto;animation:pop .5s cubic-bezier(.3,1.6,.5,1) both .15s}
+@keyframes pop{from{opacity:0;transform:scale(.3) rotate(-25deg)}to{opacity:1;transform:none}}
 .big .u{font-size:clamp(22px,5vw,32px);font-weight:700;line-height:1.1}
+.famtag{display:inline-flex;align-self:flex-start;gap:8px;align-items:center;background:#E8FBEF;color:#0F5A2A;border-radius:999px;padding:6px 14px;font-size:15px;font-weight:700}
 .cap{margin:0;font-size:clamp(21px,4.2vw,26px);line-height:1.3;font-weight:600}
 .bar{position:relative;height:26px;border-radius:13px;background:#E9E9EF;overflow:hidden}
 .bar div{position:absolute;top:0;bottom:0}
@@ -93,26 +128,49 @@ select{font-size:18px;font-weight:600;color:#111114;height:54px;padding:0 16px;b
 .legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:#26262C}
 .legend span{display:inline-flex;align-items:center;gap:8px}
 .legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
-.p18{margin:0;font-size:18px;line-height:1.45;color:#26262C}
-.facts{display:flex;flex-wrap:wrap;gap:12px}
-.fact{flex:1 1 200px;background:#F2F2F5;border-radius:20px;padding:18px 20px;display:flex;flex-direction:column;gap:6px}
-.fact b{font-size:26px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
+details.fold{background:#F2F2F5;border-radius:20px}
+details.fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:18px 20px;font-size:19px;font-weight:700}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary .chev{margin-left:auto;width:22px;height:22px;transition:transform .2s}
+details.fold[open]>summary .chev{transform:rotate(180deg)}
+details.fold>summary img{width:34px;height:34px}
+.fold-body{padding:0 20px 20px;display:flex;flex-direction:column;gap:14px}
+.p18{margin:0;font-size:17px;line-height:1.45;color:#26262C}
+.earn{font-size:19px;font-weight:600;color:#111114}
+.facts{display:flex;flex-wrap:wrap;gap:10px}
+.fact{flex:1 1 200px;background:#FFF;border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.fact b{font-size:24px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
 .fact span{font-size:14px;line-height:1.35;color:#55555F}
-.cmp{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:17px}
-.pill{background:#2BDB71;color:#0B2A16;font-weight:800;border-radius:999px;padding:6px 16px;font-size:18px}
-.acts{display:flex;flex-wrap:wrap;gap:10px}
-.acts button{height:56px;border-radius:16px;font-size:17px;font-weight:700;cursor:pointer}
-.b1{flex:1 1 220px;border:0;background:#3A3AF4;color:#FFF}
-.b2{flex:1 1 160px;border:1.5px solid #D9D9E1;background:#FFF;color:#111114}
+.kids-row{display:flex;gap:4px;min-height:44px;align-items:center}
+.kids-row img{width:40px;height:40px;animation:pop .35s cubic-bezier(.3,1.6,.5,1) both}
+.kid-wrap{display:flex;flex-direction:column;gap:2px;padding:0 4px}
+.kid-range{width:100%;accent-color:#3A3AF4;height:30px;margin:0}
+.kid-ticks{display:flex;justify-content:space-between;padding:0 4px;font-size:15px;font-weight:700;color:#45454F}
+.kid-ticks span{width:16px;text-align:center;position:relative}
+.kid-ticks span::before{content:'';position:absolute;left:50%;top:-6px;width:2px;height:6px;background:#C9C9D3;transform:translateX(-50%)}
+.b1{height:56px;border:0;border-radius:16px;background:#3A3AF4;color:#FFF;font-size:17px;font-weight:700;cursor:pointer;padding:0 22px}
+.b2{height:56px;border-radius:16px;border:1.5px solid #D9D9E1;background:#FFF;color:#111114;font-size:17px;font-weight:700;cursor:pointer;padding:0 22px}
+.bridge{background:#3A3AF4;color:#FFF;border-radius:24px;padding:24px clamp(20px,4vw,32px);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.bridge img{width:88px;height:88px;border-radius:50%;object-fit:cover;border:3px solid #FFF;flex:0 0 auto}
+.bridge .bt{flex:1 1 220px;display:flex;flex-direction:column;gap:6px}
+.bridge b{font-size:21px;font-weight:800;line-height:1.15}
+.bridge span{font-size:16px;line-height:1.45;color:#E3E6FF}
+.bridge a{display:inline-flex;align-items:center;justify-content:center;height:50px;padding:0 22px;border-radius:14px;background:#FFF;color:#1D1DC9;font-size:16px;font-weight:700;text-decoration:none;flex:1 1 100%}
+.linkbtn{border:0;background:none;padding:6px 0;color:#3A3AF4;font-size:17px;font-weight:700;cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+.linkbtn:hover{color:#1D1DC9}
+.share-box{display:flex;flex-direction:column;gap:10px}
 .share{background:#F2F2F5;border-radius:14px;padding:14px 16px;font-size:15px;line-height:1.45;color:#26262C;user-select:all;-webkit-user-select:all}
-.bridge{background:#16161B;color:#FFF;border-radius:24px;padding:26px clamp(20px,4vw,32px);display:flex;flex-direction:column;gap:12px}
-.bridge b{font-size:22px;font-weight:800;line-height:1.15}
-.bridge span{font-size:16px;line-height:1.45;color:#C9C9D6}
-.bridge a{align-self:flex-start;display:inline-flex;align-items:center;height:50px;padding:0 22px;border-radius:14px;background:#FFF;color:#111114;font-size:16px;font-weight:700;text-decoration:none}
-footer{border-top:1px solid #ECECF1;padding:22px clamp(20px,6vw,72px) 30px;display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.55;color:#6E6E7A}
-footer b{color:#45454F}
-@media (prefers-reduced-motion:reduce){.tint{animation:none}.fl{animation:none;opacity:1}.blink{animation:none}}
+
+/* ---------- откуда цифры ---------- */
+footer{border-top:1px solid #ECECF1;padding:8px clamp(12px,5vw,60px) 26px}
+details.src>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:16px 8px;font-size:16px;font-weight:700;color:#45454F}
+details.src>summary::-webkit-details-marker{display:none}
+details.src>summary .chev{width:20px;height:20px;transition:transform .2s}
+details.src[open]>summary .chev{transform:rotate(180deg)}
+.src-body{padding:0 8px;display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.55;color:#6E6E7A}
+@media (prefers-reduced-motion:reduce){.tint,.spark,.big .emo,.kids-row img,.step{animation:none!important}.fl{transition:none}html{scroll-behavior:auto}}
 </style>
+<!-- Яндекс Метрика: номер счетчика вписать в METRIKA_ID ниже (0 — метрика выключена) -->
 </head>
 <body>
 <div class="page">
@@ -120,81 +178,116 @@ footer b{color:#45454F}
 
 <!-- ЭКРАН 1: обложка и вопросы -->
 <section id="s-form">
-  <div class="hero tint">
-    <img class="cut" src="/ipoteka/cover-wheel.webp" width="1200" height="600" alt="Панельный дом в колесе для хомяка, вокруг летают будильники">
+  <div class="hero" id="hero">
+    <div class="stage">
+      <img src="cover-room.webp" width="1500" height="750" alt="Комната: диван, плед, кот на ковре, аэрогриль, телевизор с помехами" fetchpriority="high">
+      <canvas class="tv" id="tv" width="96" height="64" aria-hidden="true"></canvas>
+    </div>
+    <div class="cta-wrap">
+      <span class="spark s1"><svg viewBox="0 0 24 24"><path d="M12 0C13 7.5 16.5 11 24 12C16.5 13 13 16.5 12 24C11 16.5 7.5 13 0 12C7.5 11 11 7.5 12 0Z" fill="#FFF"/></svg></span>
+      <span class="spark s2"><svg viewBox="0 0 24 24"><path d="M12 0C13 7.5 16.5 11 24 12C16.5 13 13 16.5 12 24C11 16.5 7.5 13 0 12C7.5 11 11 7.5 12 0Z" fill="#FFF"/></svg></span>
+      <span class="spark s3"><svg viewBox="0 0 24 24"><path d="M12 0C13 7.5 16.5 11 24 12C16.5 13 13 16.5 12 24C11 16.5 7.5 13 0 12C7.5 11 11 7.5 12 0Z" fill="#FFF"/></svg></span>
+      <span class="spark s4"><svg viewBox="0 0 24 24"><path d="M12 0C13 7.5 16.5 11 24 12C16.5 13 13 16.5 12 24C11 16.5 7.5 13 0 12C7.5 11 11 7.5 12 0Z" fill="#FFF"/></svg></span>
+      <span class="spark s5"><svg viewBox="0 0 24 24"><path d="M12 0C13 7.5 16.5 11 24 12C16.5 13 13 16.5 12 24C11 16.5 7.5 13 0 12C7.5 11 11 7.5 12 0Z" fill="#FFF"/></svg></span>
+      <button class="cta" type="button" id="cta">Посчитать</button>
+    </div>
   </div>
   <div class="wrap">
     <div class="meta">
-      <span class="rub"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="0.5" y="0.5" width="17" height="17" rx="5" fill="#93AEFD"/><path d="M4.5 13.5V8L9 4.5L13.5 8V13.5H10.5V10.5H7.5V13.5Z" fill="#FFF"/></svg>Калькулятор</span>
-      <span>18 ноября 2026</span>
-      <span>@vlad.toka</span>
+      <span class="chip"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="0.5" y="0.5" width="17" height="17" rx="5" fill="#93AEFD"/><path d="M4.5 13.5V8L9 4.5L13.5 8V13.5H10.5V10.5H7.5V13.5Z" fill="#FFF"/></svg>Калькулятор возможностей</span>
+      <span class="chip">@vlad.toka</span>
     </div>
     <div style="display:flex;flex-direction:column;gap:10px">
       <h1>Сделай ипотеку доступной</h1>
-      <p class="sub">Калькулятор для тех, кто не ноет, а считает</p>
+      <p class="sub">Калькулятор для тех, кто ищет возможности</p>
     </div>
     <div class="lead">
-      <p>Говорят, ипотека в России недоступна. Так говорят слабые. Сильные знают: доступно всё, если правильно распределить время.</p>
-      <p>Ответь на шесть вопросов, и мы посчитаем, сколько часов в неделю отделяет тебя от своей квартиры.</p>
+      <p>Говорят, ипотека в России недоступна. Но мы-то знаем: доступно все, если правильно распределить время.</p>
+      <p>Ответь на три вопроса, и я покажу, сколько часов в неделю отделяет тебя от квартиры мечты.</p>
     </div>
 
     <form class="box" id="f" novalidate>
-      <div class="q">
-        <label class="ql" for="q-region">Где будем жить?</label>
-        <select id="q-region"></select>
+      <div class="shead">
+        <div class="t"><span id="s-num">Вопрос 1 из 3</span><b id="s-title">Мечта</b></div>
+        <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
       </div>
-      <div class="q">
-        <span class="ql" id="q-type">Какую квартиру хочешь?</span>
-        <div class="seg seg4" role="group" aria-labelledby="q-type" id="types"></div>
-        <span class="hint" id="type-hint"></span>
+
+      <div class="step" data-step="1">
+        <div class="q">
+          <label class="ql" for="q-region">Где будем жить?</label>
+          <select id="q-region"></select>
+        </div>
+        <div class="q">
+          <span class="ql" id="q-type">Какую квартиру хочешь?</span>
+          <div class="seg seg4" role="group" aria-labelledby="q-type" id="types"></div>
+          <span class="hint" id="type-hint"></span>
+        </div>
       </div>
-      <div class="q">
-        <span class="ql" id="q-who">Платишь один или вдвоём?</span>
-        <div class="seg seg2" role="group" aria-labelledby="q-who" id="whos"></div>
+
+      <div class="step" data-step="2" hidden>
+        <div class="q">
+          <span class="ql" id="q-who">Платишь один или вдвоем?</span>
+          <div class="seg seg2" role="group" aria-labelledby="q-who" id="whos"></div>
+        </div>
+        <div class="q">
+          <div class="range-head"><label class="ql" for="q-years">За сколько лет хочешь закрыть ипотеку?</label><b id="years-val" aria-hidden="true">5 лет</b></div>
+          <div class="yr"><div class="yr-glow" id="yr-glow"></div><input class="years" id="q-years" type="range" min="5" max="30" step="1" value="5" aria-describedby="years-hint"></div>
+          <div class="range-scale" aria-hidden="true"><span>5 лет</span><span>30 лет</span></div>
+          <span class="hint" id="years-hint"></span>
+        </div>
       </div>
-      <div class="q">
-        <label class="ql" for="q-down">Сколько в кубышке на первый взнос?</label>
-        <div class="money"><input id="q-down" type="text" inputmode="numeric" autocomplete="off" placeholder="0"><span aria-hidden="true">₽</span></div>
-        <span class="hint" id="down-hint"></span>
+
+      <div class="step" data-step="3" hidden>
+        <div class="q">
+          <label class="ql" for="q-down" id="down-label">Сколько накопил на первый взнос?</label>
+          <div class="money"><input id="q-down" type="text" inputmode="numeric" autocomplete="off" placeholder="0"><span aria-hidden="true">₽</span></div>
+          <span class="hint" id="down-hint"></span>
+        </div>
+        <div class="q">
+          <label class="ql" for="q-inc" id="inc-label">Сколько получаешь на руки в&nbsp;месяц?</label>
+          <div class="money"><input id="q-inc" type="text" inputmode="numeric" autocomplete="off" placeholder="0" enterkeyhint="go"><span aria-hidden="true">₽</span></div>
+          <span class="err" role="alert" id="inc-err" hidden>Напиши доход: без него банк даже не разговаривает</span>
+        </div>
       </div>
-      <div class="q">
-        <div class="range-head"><label class="ql" for="q-years">За сколько лет хочешь расплатиться?</label><b id="years-val" aria-hidden="true">30 лет</b></div>
-        <input class="years" id="q-years" type="range" min="5" max="30" step="1" value="30" aria-describedby="years-hint">
-        <div class="range-scale" aria-hidden="true"><span>5 лет</span><span>30 лет</span></div>
-        <span class="hint" id="years-hint"></span>
+
+      <div class="nav">
+        <button class="ghost" type="button" id="back" hidden>Назад</button>
+        <button class="btn" type="button" id="next">Далее</button>
+        <button class="btn" type="submit" id="go" hidden>Сделать ипотеку доступной</button>
       </div>
-      <div class="q">
-        <label class="ql" for="q-inc" id="inc-label">Сколько получаешь на руки в&nbsp;месяц?</label>
-        <div class="money"><input id="q-inc" type="text" inputmode="numeric" autocomplete="off" placeholder="0"><span aria-hidden="true">₽</span></div>
-        <span class="err" role="alert" id="inc-err" hidden>Напиши доход: без него банк даже не разговаривает</span>
-      </div>
-      <button class="btn" type="submit">Сделать ипотеку доступной</button>
     </form>
   </div>
 </section>
 
 <!-- ЭКРАН 2: загрузка -->
 <section id="s-load" hidden>
-  <div class="loading tint">
-    <svg width="200" height="230" viewBox="0 0 200 230" role="img" aria-label="Дом достраивается по этажам" id="house">
-      <rect x="10" y="214" width="180" height="6" rx="3" fill="#111114"/>
+  <div class="loading">
+    <svg width="200" height="230" viewBox="0 0 200 230" role="img" aria-label="Дом собирается, в окнах зажигается свет" id="house">
+      <rect x="10" y="214" width="180" height="6" rx="3" fill="#3B4270"/>
     </svg>
-    <div class="ltext"><b class="blink" id="load-text">Считаем платёж</b><span>Строим твою доступную ипотеку</span></div>
+    <div class="ltext"><b id="load-text">Считаем платеж</b><span>Строим твою доступную ипотеку</span></div>
   </div>
 </section>
 
 <!-- ЭКРАН 3: результат -->
 <section id="s-res" hidden>
   <div class="hero-res tint">
-    <img class="cut" src="/ipoteka/cover-clock.webp" width="921" height="640" alt="Будильник, на нём крошечная пятиэтажка, рядом ключи" loading="lazy">
+    <img class="cut" src="cover-clock.webp" width="921" height="640" alt="Будильник, на нем крошечная пятиэтажка, рядом ключи" loading="lazy">
   </div>
   <div class="res" id="res"></div>
 </section>
 
 <footer id="sources">
-  <b>Откуда цифры</b>
-  <span>Цены метра в новостройках — Росстат, IV квартал 2025 года, по данным Statbase. Ставка 18,7% — средняя рыночная по данным ДОМ.РФ на ноябрь 2026 года. Банк одобряет ипотеку, если платёж не больше половины дохода. Срок выбираешь сам, от 5 до 30 лет: дольше 30 банки не дают. Первый взнос — не меньше 20% цены. Площади: студия 25 м², однушка 38, двушка 55, трёшка 75. Средние зарплаты — Росстат, 2025 год, за вычетом налога.</span>
-  <span>Часы считаем от обычной 40-часовой недели на человека: если доход нужно увеличить в три раза, работать придётся втрое больше. Не учтены: семейная и другие льготные программы, страховка, налоговый вычет, рост цен и зарплат, вторичное жильё.</span>
+  <details class="src" id="src">
+    <summary>Откуда цифры? <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+    <div class="src-body">
+      <span>Цены квадратного метра в новостройках — Росстат, III квартал 2026 года, на конец квартала. По Еврейской автономной области и Чукотке Росстат свежие цены не публикует — для них IV квартал 2025 года.</span>
+      <span>Ставка 18,77% — средневзвешенная ставка по рыночной ипотеке на первичном рынке, ДОМ.РФ, 18 ноября 2026 года. Банк одобряет ипотеку, если платеж не больше половины дохода. Первый взнос — не меньше 20% цены. Срок выбираешь сам, от 5 до 30 лет: дольше банки не дают.</span>
+      <span>Площади: студия 25 м², однушка 38, двушка 55, трешка 75. Часы считаем от обычной 40-часовой недели на человека: если доход нужно увеличить в три раза, работать придется втрое больше.</span>
+      <span>Семейная ипотека — условия Минфина для договоров с 1 октября 2026 года: ставка и льготный лимит зависят от числа детей и региона (Москва, Петербург, Московская и Ленинградская области — от 12% и 12 млн ₽ с одним ребенком до 4% и 18 млн ₽ с пятью; другие регионы — от 10% и 6 млн ₽ до 2% и 10 млн ₽). Нужен хотя бы один ребенок младше 7 лет. Сумму сверх льготного лимита считаем по рыночной ставке, весь кредит — не больше 30 млн ₽ в столичных регионах и 15 млн ₽ в остальных. Льготная ставка действует первые 15 лет, потом банк вправе поднять ее не больше чем на 4 п. п.; часы считаем по платежу первых лет.</span>
+      <span>Не учтены: страховка, налоговый вычет, рост цен и зарплат, вторичное жилье. Эмодзи — Fluent Emoji, Microsoft, лицензия MIT.</span>
+    </div>
+  </details>
 </footer>
 
 </main>
@@ -204,16 +297,60 @@ footer b{color:#45454F}
 (function () {
   'use strict';
 
-  // [регион, цена м² в новостройке, средняя начисленная зарплата]
-  var REGIONS = [["Адыгея",143833,63759],["Алтай",170781,72941],["Алтайский край",139224,63971],["Амурская область",166068,99073],["Архангельская область",129543,91121],["Астраханская область",155619,69820],["Башкортостан",144795,74391],["Белгородская область",118200,73891],["Брянская область",106448,65803],["Бурятия",130221,83574],["Владимирская область",119427,73285],["Волгоградская область",120808,68340],["Вологодская область",101765,80975],["Воронежская область",120258,75525],["Дагестан",118587,49925],["Еврейская АО",112120,91167],["Забайкальский край",162599,99768],["Ивановская область",97044,57122],["Ингушетия",60073,44652],["Иркутская область",148762,95318],["Кабардино-Балкария",78100,53252],["Калининградская область",139105,77022],["Калмыкия",81976,55806],["Калужская область",110040,83930],["Камчатский край",179039,151016],["Карачаево-Черкесия",78441,54755],["Карелия",147182,81569],["Кемеровская область",123622,83017],["Кировская область",124934,67199],["Коми",121180,95980],["Костромская область",97965,63292],["Краснодарский край",152602,76115],["Красноярский край",140536,105571],["Крым",160245,63834],["Курганская область",106536,72992],["Курская область",129941,75521],["Ленинградская область",175562,94348],["Липецкая область",97376,76460],["Магаданская область",161000,178076],["Марий Эл",112172,70460],["Мордовия",106981,67262],["Москва",433182,180861],["Московская область",211293,116008],["Мурманская область",148857,125302],["Ненецкий АО",122924,146957],["Нижегородская область",172417,80778],["Новгородская область",102574,72178],["Новосибирская область",143706,86546],["Омская область",147750,73100],["Оренбургская область",95274,74294],["Орловская область",99005,63817],["Пензенская область",102953,67293],["Пермский край",146998,83646],["Приморский край",183805,96177],["Псковская область",84120,63454],["Ростовская область",135722,70813],["Рязанская область",132781,73393],["Самарская область",139026,76626],["Санкт-Петербург",293609,121475],["Саратовская область",98386,67353],["Сахалинская область",164336,148172],["Свердловская область",157060,89286],["Севастополь",194966,66605],["Северная Осетия",84599,53721],["Смоленская область",102735,68468],["Ставропольский край",108929,63673],["Тамбовская область",96410,63024],["Татарстан",204963,90515],["Тверская область",108261,72783],["Томская область",141384,85829],["Тульская область",104179,84212],["Тыва",144795,75253],["Тюменская область",138815,94124],["Удмуртия",120491,77925],["Ульяновская область",115702,69676],["Хабаровский край",164383,97025],["Хакасия",113740,80227],["Ханты-Мансийский АО",134681,135914],["Челябинская область",129836,81366],["Чечня",92200,46652],["Чувашия",125539,68379],["Чукотский АО",269901,214604],["Якутия",168344,139435],["Ямало-Ненецкий АО",183760,177711],["Ярославская область",109624,73832]];
+  // ---------- типографика: короткие слова и цифры не висят в конце строки ----------
+  var NB = ' ';
+  var SHORT = /(^|[\s(«" ])([А-Яа-я\u0401\u0451A-Za-z]{1,2}|для|без|при|про|под|над|что|как|или|чем|Для|Без|При|Про|Под|Над|Что|Как|Или|Чем) (?=\S)/g;
+  function typo(t) {
+    if (!t || t.length < 3) return t;
+    var r = t.replace(SHORT, '$1$2' + NB).replace(SHORT, '$1$2' + NB)
+      .replace(/ (—|–)/g, NB + '$1')
+      .replace(/(\d[\d,%]*) (?=[А-Яа-я\u0401\u0451A-Za-z₽%])/g, '$1' + NB);
+    return r;
+  }
+  function typoEl(root) {
+    if (!root) return;
+    if (root.nodeType === 3) { var v = typo(root.nodeValue); if (v !== root.nodeValue) root.nodeValue = v; return; }
+    if (root.nodeType !== 1 || /^(SCRIPT|STYLE|TEXTAREA|INPUT)$/.test(root.nodeName)) return;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), n, list = [];
+    while ((n = w.nextNode())) list.push(n);
+    list.forEach(function (x) { var p = x.parentNode; if (p && /^(SCRIPT|STYLE|TEXTAREA)$/.test(p.nodeName)) return; var v = typo(x.nodeValue); if (v !== x.nodeValue) x.nodeValue = v; });
+  }
+  typoEl(document.body);
+  if (window.MutationObserver) {
+    new MutationObserver(function (ms) {
+      ms.forEach(function (m) {
+        if (m.type === 'characterData') typoEl(m.target);
+        else for (var i = 0; i < m.addedNodes.length; i++) typoEl(m.addedNodes[i]);
+      });
+    }).observe(document.body, { childList: true, characterData: true, subtree: true });
+  }
+
+  // ---------- метрика ----------
+  var METRIKA_ID = 0; // номер счетчика Яндекс Метрики, например 98765432
+  if (METRIKA_ID) {
+    (function (m, e, t, r, i, k, a) { m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); }; m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a); })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+    window.ym(METRIKA_ID, 'init', { clickmap: true, trackLinks: true, accurateTrackBounce: true });
+  }
+  var sent = {};
+  function track(goal, once) {
+    if (once && sent[goal]) return; sent[goal] = 1;
+    try { if (METRIKA_ID && window.ym) window.ym(METRIKA_ID, 'reachGoal', goal); } catch (e) {}
+  }
+
+  // ---------- данные ----------
+  // [регион, цена м² в новостройке, ₽] — Росстат, III кв. 2026; ЕАО и Чукотка — IV кв. 2025
+  var REGIONS = [["Адыгея",141235],["Алтай",227955],["Алтайский край",148352],["Амурская область",174685],["Архангельская область",148886],["Астраханская область",158789],["Башкортостан",149941],["Белгородская область",133838],["Брянская область",117274],["Бурятия",155104],["Владимирская область",124258],["Волгоградская область",136564],["Вологодская область",114445],["Воронежская область",127323],["Дагестан",102744],["Еврейская АО",112120],["Забайкальский край",184519],["Ивановская область",104898],["Ингушетия",60577],["Иркутская область",165617],["Кабардино-Балкария",88082],["Калининградская область",156215],["Калмыкия",91169],["Калужская область",127480],["Камчатский край",182042],["Карачаево-Черкесия",84323],["Карелия",147567],["Кемеровская область",134399],["Кировская область",137937],["Коми",113074],["Костромская область",107786],["Краснодарский край",159060],["Красноярский край",148571],["Крым",192595],["Курганская область",113110],["Курская область",139184],["Ленинградская область",192531],["Липецкая область",108800],["Магаданская область",168320],["Марий Эл",122307],["Мордовия",115499],["Москва",493120],["Московская область",236073],["Мурманская область",154497],["Ненецкий АО",134442],["Нижегородская область",188718],["Новгородская область",119867],["Новосибирская область",147832],["Омская область",157112],["Оренбургская область",109105],["Орловская область",103530],["Пензенская область",109121],["Пермский край",162980],["Приморский край",187142],["Псковская область",89186],["Ростовская область",130483],["Рязанская область",137983],["Самарская область",144221],["Санкт-Петербург",318992],["Саратовская область",113371],["Сахалинская область",196511],["Свердловская область",160787],["Севастополь",212775],["Северная Осетия",114436],["Смоленская область",113165],["Ставропольский край",123341],["Тамбовская область",98562],["Татарстан",204708],["Тверская область",125915],["Томская область",151853],["Тульская область",131656],["Тыва",142788],["Тюменская область",137399],["Удмуртия",139952],["Ульяновская область",127013],["Хабаровский край",170877],["Хакасия",120030],["Ханты-Мансийский АО",126448],["Челябинская область",144236],["Чечня",90036],["Чувашия",128340],["Чукотский АО",269901],["Якутия",168485],["Ямало-Ненецкий АО",193498],["Ярославская область",127677]];
+  var FAMILY = {"big":["Москва","Московская область","Санкт-Петербург","Ленинградская область"],"byKids":{"1":{"big":{"rate":0.12,"limit":12000000},"other":{"rate":0.1,"limit":6000000}},"2":{"big":{"rate":0.1,"limit":15000000},"other":{"rate":0.08,"limit":8000000}},"3":{"big":{"rate":0.08,"limit":18000000},"other":{"rate":0.06,"limit":10000000}},"4":{"big":{"rate":0.06,"limit":18000000},"other":{"rate":0.04,"limit":10000000}},"5":{"big":{"rate":0.04,"limit":18000000},"other":{"rate":0.02,"limit":10000000}}},"cap":{"big":30000000,"other":15000000}};
   var AREA = { studio: 25, one: 38, two: 55, three: 75 };
-  var NAMES = { studio: ['Студию', 'Студия', 'студия'], one: ['1-к', 'Однушка', 'однушка'], two: ['2-к', 'Двушка', 'двушка'], three: ['3-к', 'Трёшка', 'трёшка'] };
-  var RATE = 0.187, NOW_YEAR = 2026, YEARS_MIN = 5, YEARS_MAX = 30;
-  var LOAD_MSGS = ['Считаем платёж', 'Договариваемся с банком', 'Ищем лишние часы в неделе', 'Переводим будильник'];
+  var NAMES = { studio: ['Студию', 'Студия', 'студию'], one: ['1-к', 'Однушка', 'однушку'], two: ['2-к', 'Двушка', 'двушку'], three: ['3-к', 'Трешка', 'трешку'] };
+  var RATE = 0.1877, NOW_YEAR = 2026, YEARS_MIN = 5, YEARS_MAX = 30, YEARS_DEF = 5;
+  var LOAD_MSGS = ['Считаем платеж', 'Договариваемся с банком', 'Ищем лишние часы в неделе', 'Переводим будильник'];
+  var EMO = ['e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7'];
+  var EMO_ALT = ['Довольное лицо в темных очках', 'Улыбка', 'Улыбка с капелькой пота', 'Гримаса', 'Усталое лицо', 'Лицо без сил', 'Взрыв мозга'];
 
   var spb = 0;
   for (var i = 0; i < REGIONS.length; i++) if (REGIONS[i][0] === 'Санкт-Петербург') spb = i;
-  var S = { regionIdx: spb, type: 'one', pair: false, down: '', inc: '', years: YEARS_MAX };
+  var S = { regionIdx: spb, type: 'one', pair: false, down: '', inc: '', years: YEARS_DEF, kids: 0 };
 
   // ---------- формат ----------
   function plural(n, one, few, many) { var a = n % 10, b = n % 100; if (a === 1 && b !== 11) return one; if (a >= 2 && a <= 4 && (b < 12 || b > 14)) return few; return many; }
@@ -222,51 +359,69 @@ footer b{color:#45454F}
   var NF = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
   function num(x) { return NF.format(Math.round(x)); }
   function dec(x) { var r = Math.round(x * 10) / 10; return Number.isInteger(r) ? String(r) : r.toFixed(1).replace('.', ','); }
-  function rub(x) { return num(x) + ' ₽'; }
-  function mln(x) { return dec(x / 1e6) + ' млн ₽'; }
+  function rub(x) { return num(x) + '\u00a0₽'; }
+  function mln(x) { return x < 1e6 ? rub(x) : dec(x / 1e6) + '\u00a0млн\u00a0₽'; }
+  function pct(x) { return (Math.round(x * 1000) / 10).toString().replace('.', ',') + '%'; }
   function H(n) { return plural(n, 'час', 'часа', 'часов'); }
   function Y(n) { return n + ' ' + plural(n, 'год', 'года', 'лет'); }
   function hm(h) { var t = Math.max(0, Math.round(h * 60)), hh = Math.floor(t / 60), mm = t % 60; if (hh === 0) return mm + ' мин'; return mm ? hh + ' ч ' + mm + ' мин' : hh + ' ' + H(hh); }
-  function decH(x) { var r = Math.round(x * 10) / 10; return dec(r) + ' ' + (Number.isInteger(r) ? H(r) : 'часа'); }
-  function stavki(x) { var r = Math.round(x * 10) / 10; return dec(r) + ' ' + (Number.isInteger(r) ? plural(r, 'ставка', 'ставки', 'ставок') : 'ставки'); }
   function digits(s) { var v = parseInt(String(s).replace(/\D/g, ''), 10); return isFinite(v) ? v : 0; }
 
-  // ---------- расчёт ----------
-  function pmt(L, months) { var i = RATE / 12; return L * i / (1 - Math.pow(1 + i, -months)); }
+  // ---------- расчет ----------
+  function pmt(L, months, rate) { if (L <= 0) return 0; var i = rate / 12; return L * i / (1 - Math.pow(1 + i, -months)); }
+  function family(kids, regName) {
+    if (!kids || !FAMILY) return null;
+    var k = String(Math.min(kids, 5)), g = FAMILY.big.indexOf(regName) >= 0 ? 'big' : 'other';
+    var c = FAMILY.byKids[k] && FAMILY.byKids[k][g];
+    return c ? { rate: c.rate, limit: c.limit, cap: FAMILY.cap[g], group: g } : null;
+  }
   function calc() {
     var reg = REGIONS[S.regionIdx] || REGIONS[0];
     var area = AREA[S.type], months = S.years * 12;
     var price = area * reg[1], minDown = price * 0.2, down = digits(S.down), inc = Math.max(1, digits(S.inc));
     var usedDown = Math.min(price, Math.max(down, minDown)), L = Math.max(0, price - usedDown);
-    var pay = pmt(L, months), need = pay * 2, k = need / inc, Hh = 40 * k;
-    var avgNet = reg[2] ? reg[2] * 0.87 * (S.pair ? 2 : 1) : null;
+    var fam = family(S.kids, reg[0]);
+    var pay, Lfam = 0, Lmkt = L;
+    var famBlocked = false;
+    if (fam && L > fam.cap) { famBlocked = fam; fam = null; }
+    if (fam) { Lfam = Math.min(L, fam.limit); Lmkt = L - Lfam; pay = pmt(Lfam, months, fam.rate) + pmt(Lmkt, months, RATE); }
+    else pay = pmt(L, months, RATE);
+    var need = pay * 2, k = need / inc, Hh = 40 * k;
     return { reg: reg, area: area, price: price, minDown: minDown, down: down, inc: inc, L: L, pay: pay, need: need, k: k, H: Hh, Hr: Math.round(Hh),
-      shortfall: Math.max(0, minDown - down), interest: pay * months - L, avgH: avgNet ? 40 * need / avgNet : null, noMortgage: down >= price,
-      lastYear: NOW_YEAR + S.years };
+      shortfall: Math.max(0, minDown - down), interest: pay * months - L, noMortgage: down >= price, lastYear: NOW_YEAR + S.years, fam: fam, famBlocked: famBlocked, Lfam: Lfam, Lmkt: Lmkt };
   }
 
   // ---------- подписи: 7 корзин, числа подставляет код ----------
+  function bucket(Hr) { return Hr <= 40 ? 0 : Hr <= 45 ? 1 : Hr <= 60 ? 2 : Hr <= 84 ? 3 : Hr <= 112 ? 4 : Hr <= 168 ? 5 : 6; }
+  function weeks2(Hh) { var r = Hh / 40; return r < 1.65 ? 'полторы рабочие недели' : r < 1.95 ? 'почти две полноценные рабочие недели' : 'две полноценные рабочие недели'; }
+  function weeks3(Hh) { return Hh / 40 < 2.45 ? 'больше двух рабочих недель' : 'почти три рабочие недели'; }
   function caption(Hr, pair, Nm, year) {
-    var hw = 40, days = Math.ceil(Hr / 24);
-    var v = { extra: Hr - hw, jobs: Hr / hw, rest: (112 - Hr) / 7, sleep: (168 - Hr) / 7, lack: Hr - 168, ask: days === 8 ? 'восьмой день' : 'неделю из ' + days + ' ' + genD(days) };
-    var b = Hr <= hw ? 'fits' : Hr <= hw + 5 ? 'almost' : Hr <= 60 ? 'plus' : Hr <= 84 ? 'two' : Hr <= 112 ? 'nooff' : Hr <= 168 ? 'nosleep' : 'eighth';
-    var L = {
-      fits: [[Nm + ' тебе правда доступна. Можешь закрыть сайт и не рассказывать друзьям.', 'Укладываешься в обычную неделю. Редкий случай, сделай скриншот.'],
-             [Nm + ' вам правда доступна. Можете закрыть сайт и не рассказывать друзьям.', 'Вы укладываетесь в обычную неделю. Редкий случай, сделайте скриншот.']],
-      almost: [['Почти укладываешься: всего ' + v.extra + ' ' + H(v.extra) + ' сверху в неделю. Ипотека почти доступна, как и всё в этой жизни.'],
-               ['Почти укладываетесь: каждому всего ' + v.extra + ' ' + H(v.extra) + ' сверху в неделю. Ипотека почти доступна.']],
-      plus: [['Обычная работа плюс подработка: ' + v.extra + ' ' + H(v.extra) + ' сверху каждую неделю до ' + year + ' года.', 'Это примерно ' + decH(v.extra / 5) + ' сверху каждый будний день. До ' + year + ' года.'],
-             ['Каждому плюс ' + v.extra + ' ' + H(v.extra) + ' в неделю до ' + year + ' года. Ужинать будете на работе.']],
-      two: [['Это ' + stavki(v.jobs) + '. Вечеров больше нет, есть вторая смена до ' + year + ' года.', decH(Hr / 7) + ' в день, семь дней в неделю. Выходные — после ' + year + ' года.'],
-            ['Каждому — ' + Hr + ' ' + H(Hr) + ' в неделю. Видеться будете в лифте.', 'Каждому — ' + stavki(v.jobs) + '. Совместный отпуск — в ' + year + ' году.']],
-      nooff: [['Без выходных, ' + decH(Hr / 7) + ' в день. Отпуск — в ' + year + ' году.', 'Сон по 8 часов ещё помещается. После него остаётся ' + hm(v.rest) + ' в сутки на еду, дорогу и личную жизнь.'],
-              ['Каждому по ' + decH(Hr / 7) + ' в день без выходных. Свидания — по графику банка.', 'После сна у каждого остаётся ' + hm(v.rest) + ' в сутки. Хватит, чтобы сказать «привет» и «пока».']],
-      nosleep: [(v.sleep < 6.5 ? ['Спать по восемь часов — для тех, у кого нет ипотеки. Тебе — ' + hm(v.sleep) + ', если не есть и не ездить на работу.'] : []).concat(['На сон, еду и всё остальное остаётся ' + hm(v.sleep) + ' в сутки.']),
-                ['Каждому из вас — ' + hm(v.sleep) + ' в сутки на сон и всё остальное. Спать будете в разные смены.', 'Видеться будете во сне, если успеете уснуть.']],
-      eighth: [['В неделе 168 часов. Тебе нужно ' + Hr + '. Попроси у банка ' + v.ask + ', вдруг одобрит.', 'Не хватает ' + v.lack + ' ' + genH(v.lack) + '. Нужна неделя из ' + days + ' ' + genD(days) + ', такую пока не придумали.'],
-               ['А в неделе всего 168. Попросите у банка ' + v.ask + '.', 'Каждому не хватает ' + v.lack + ' ' + genH(v.lack) + '. Нужна неделя из ' + days + ' ' + genD(days) + ', такую пока не придумали.']]
-    };
-    var set = L[b][pair ? 1 : 0];
+    var days = Math.ceil(Hr / 24), x = Hr - 40;
+    var rest = (112 - Hr) / 7, sleep = (168 - Hr) / 7, lack = Hr - 168;
+    var ask = days === 8 ? 'восьмой день' : 'неделю из ' + days + ' ' + genD(days);
+    var one = x <= 13;
+    var L = [
+      [[Nm + ' тебе правда доступна. Можешь закрыть сайт и не рассказывать друзьям (чтобы не завидовали).', 'Укладываешься в обычную неделю. Редкий случай, сделай скриншот.'],
+       [Nm + ' вам правда доступна. Можете закрыть сайт и не рассказывать друзьям (чтобы не завидовали).', 'Вы укладываетесь в обычную неделю. Редкий случай, сделайте скриншот.']],
+      [['Почти укладываешься: всего ' + x + ' ' + H(x) + ' сверху в неделю. Ипотека почти доступна, как и все в этой жизни.'],
+       ['Почти укладываетесь: каждому всего ' + x + ' ' + H(x) + ' сверху в неделю. Ипотека почти доступна.']],
+      [[(one ? 'Минус выходной: пятидневка превращается в шестидневку' : 'Минус оба выходных: пятидневка превращается в семидневку') + ' до ' + year + ' года.',
+        'Плюс ' + x + ' ' + H(x) + ' в неделю — это еще ' + (one ? 'один рабочий день' : 'два рабочих дня') + ' каждую неделю до ' + year + ' года.'],
+       ['Каждому ' + (one ? 'минус выходной: пятидневка превращается в шестидневку' : 'минус оба выходных: пятидневка превращается в семидневку') + ' до ' + year + ' года.']],
+      [['Это ' + weeks2(Hr) + ' за одну. Свободных вечеров больше нет, есть вторая смена до ' + year + ' года.',
+        Hr / 40 < 1.65 ? 'Днем основная работа, вечером подработка. И так до ' + year + ' года.' : 'Это как две работы сразу: днем одна, вечером вторая. До ' + year + ' года.'],
+       ['Каждому — ' + Hr + ' ' + H(Hr) + ' в неделю. Видеться будете в лифте по дороге на работу.', 'Каждому — ' + weeks2(Hr) + ' за одну. Встречаться будете в пересменку.']],
+      [['Это ' + weeks3(Hr) + ' за одну. Хобби придется отложить до ' + year + ' года.',
+        rest * 60 >= 10 ? 'Сон по 8 часов еще помещается. После него остается ' + hm(rest) + ' в сутки на еду, дорогу и личную жизнь.' : 'Сон по 8 часов еще помещается. А вот на еду, дорогу и личную жизнь времени уже не остается.'],
+       ['Каждому — ' + weeks3(Hr) + ' за одну. Свидания — по графику банка.',
+        rest * 60 >= 10 ? 'После сна у каждого остается ' + hm(rest) + ' в сутки. Хватит, чтобы сказать «привет» и «пока» между работами.' : 'После сна свободного времени не остается совсем. Даже на «привет» и «пока» между работами.']],
+      [(sleep < 6.5 ? ['Спать по восемь часов — для тех, у кого нет ипотеки. Тебе — ' + (sleep * 60 < 1 ? 'ни минуты' : hm(sleep)) + ', если не есть и не ездить на работу.'] : [])
+         .concat([sleep * 60 < 1 ? 'На сон, еду и все остальное времени не остается.' : 'На сон, еду и все остальное остается ' + hm(sleep) + ' в сутки.']),
+       [sleep * 60 < 1 ? 'Каждому из вас на сон и все остальное времени не остается. Спать будете в разные смены.' : 'Каждому из вас — ' + hm(sleep) + ' в сутки на сон и все остальное. Спать будете в разные смены.', 'Видеться будете во сне, если успеете уснуть.']],
+      [['В неделе 168 часов. Тебе нужно ' + Hr + '. Попроси у банка ' + ask + ', вдруг одобрит.', 'Не хватает ' + lack + ' ' + genH(lack) + '. Нужна неделя из ' + days + ' ' + genD(days) + ', такую пока не придумали.'],
+       ['А в неделе всего 168. Попросите у банка ' + ask + '.', 'Каждому не хватает ' + lack + ' ' + genH(lack) + '. Нужна неделя из ' + days + ' ' + genD(days) + ', такую пока не придумали.']]
+    ];
+    var set = L[bucket(Hr)][pair ? 1 : 0];
     return set[(Hr + (pair ? 1 : 0)) % set.length];
   }
 
@@ -277,6 +432,7 @@ footer b{color:#45454F}
   sel.value = String(S.regionIdx);
   sel.addEventListener('change', function () { S.regionIdx = parseInt(sel.value, 10) || 0; hints(); });
 
+  var touched = { type: false, who: false, years: false };
   function segButtons(boxId, items, isOn, onPick) {
     var box = $(boxId);
     items.forEach(function (it) {
@@ -289,42 +445,101 @@ footer b{color:#45454F}
     paint();
   }
   segButtons('types', ['studio', 'one', 'two', 'three'].map(function (k) { return { key: k, label: NAMES[k][0] }; }),
-    function (k) { return S.type === k; }, function (k) { S.type = k; });
+    function (k) { return S.type === k; }, function (k) { S.type = k; touched.type = true; auto(1); });
   segButtons('whos', [{ key: false, label: 'Только я' }, { key: true, label: 'Нас двое' }],
-    function (k) { return S.pair === k; }, function (k) { S.pair = k; });
+    function (k) { return S.pair === k; }, function (k) { S.pair = k; touched.who = true; auto(2); });
 
   function moneyInput(id, key, after) {
     var el = $(id);
     el.addEventListener('input', function () {
       var d = String(el.value).replace(/\D/g, '').slice(0, 12);
-      S[key] = d;
-      el.value = d ? num(+d) : '';
+      S[key] = d; el.value = d ? num(+d) : '';
       try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) {}
       if (after) after();
     });
   }
   moneyInput('q-down', 'down');
   moneyInput('q-inc', 'inc', function () { $('inc-err').hidden = true; });
+  $('q-inc').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
 
-  // ползунок срока
+  // ползунок срока: белый → зеленый → желтый → красный
+  var STOPS = [[0, [255, 255, 255]], [.32, [60, 208, 112]], [.64, [255, 210, 63]], [1, [255, 59, 48]]];
+  function colorAt(t) {
+    for (var j = 1; j < STOPS.length; j++) if (t <= STOPS[j][0]) {
+      var a = STOPS[j - 1], b = STOPS[j], u = (t - a[0]) / (b[0] - a[0]);
+      return 'rgb(' + a[1].map(function (v, n) { return Math.round(v + (b[1][n] - v) * u); }).join(',') + ')';
+    }
+    return 'rgb(255,59,48)';
+  }
   var yr = $('q-years');
   function paintYears() {
-    var p = (S.years - YEARS_MIN) / (YEARS_MAX - YEARS_MIN) * 100;
-    yr.style.setProperty('--p', p + '%');
+    var t = (S.years - YEARS_MIN) / (YEARS_MAX - YEARS_MIN), p = (t * 100) + '%';
+    var c = colorAt(Math.max(.18, t));
+    yr.style.setProperty('--p', p); yr.style.setProperty('--c', c);
+    $('yr-glow').style.setProperty('--p', p);
     yr.setAttribute('aria-valuetext', Y(S.years));
     $('years-val').textContent = Y(S.years);
-    $('years-hint').textContent = 'Последний платёж — в ' + (NOW_YEAR + S.years) + ' году.' + (S.years === YEARS_MAX ? ' Дольше банки не дают.' : '');
+    $('years-val').style.color = t < .5 ? '#1F9D4C' : t < .8 ? '#C48A00' : '#E0352B';
+    $('years-hint').textContent = 'Последний платеж — в ' + (NOW_YEAR + S.years) + ' году.' + (S.years === YEARS_MAX ? ' Дольше банки не дают.' : '');
   }
-  yr.addEventListener('input', function () { S.years = Math.min(YEARS_MAX, Math.max(YEARS_MIN, parseInt(yr.value, 10) || YEARS_MAX)); paintYears(); });
+  yr.addEventListener('input', function () { S.years = Math.min(YEARS_MAX, Math.max(YEARS_MIN, parseInt(yr.value, 10) || YEARS_DEF)); paintYears(); });
+  yr.addEventListener('change', function () { touched.years = true; auto(2); });
   paintYears();
 
   function hints() {
     var c = calc();
     $('type-hint').textContent = 'Новостройка, ' + c.area + ' м². В среднем ' + mln(c.price);
-    $('down-hint').textContent = 'Банк попросит не меньше ' + mln(c.minDown) + ', это 20% цены';
-    $('inc-label').textContent = S.pair ? 'Сколько получаете вдвоём на руки в месяц?' : 'Сколько получаешь на руки в месяц?';
+    $('down-hint').textContent = 'Обычно банк хочет не меньше 20% от стоимости квартиры';
+    $('down-label').textContent = S.pair ? 'Сколько накопили на первый взнос?' : 'Сколько накопил на первый взнос?';
+    $('inc-label').textContent = S.pair ? 'Сколько получаете вдвоем на руки в месяц?' : 'Сколько получаешь на руки в месяц?';
   }
   hints();
+
+  // шаги
+  var TITLES = ['Мечта', 'Планы', 'Деньги'], step = 1, autoT = null;
+  function goStep(n, focus) {
+    step = n;
+    Array.prototype.forEach.call(document.querySelectorAll('.step'), function (el) { el.hidden = +el.getAttribute('data-step') !== n; });
+    Array.prototype.forEach.call(document.querySelectorAll('.dots i'), function (el, j) { el.className = j < n ? 'on' : ''; });
+    $('s-num').textContent = 'Вопрос ' + n + ' из 3';
+    $('s-title').textContent = TITLES[n - 1];
+    $('back').hidden = n === 1; $('next').hidden = n === 3; $('go').hidden = n !== 3;
+    if (n > 1) track('step_' + n, true);
+    if (focus) { var f = $('f'); var top = f.getBoundingClientRect().top; if (top < 0 || top > window.innerHeight * .5) f.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    if (n === 3 && focus) setTimeout(function () { try { $('q-down').focus({ preventScroll: true }); } catch (e) {} }, 320);
+  }
+  function auto(from) {
+    clearTimeout(autoT);
+    if (step !== from) return;
+    if (from === 1 && touched.type) autoT = setTimeout(function () { goStep(2, true); }, 450);
+    if (from === 2 && touched.who && touched.years) autoT = setTimeout(function () { goStep(3, true); }, 450);
+  }
+  $('next').addEventListener('click', function () { clearTimeout(autoT); goStep(Math.min(3, step + 1), true); });
+  $('back').addEventListener('click', function () { clearTimeout(autoT); goStep(Math.max(1, step - 1), true); });
+  $('cta').addEventListener('click', function () { track('cta_click'); $('f').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+
+  // ---------- обложка: резкая смена фона и помехи в телевизоре ----------
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var HUES = ['#93AEFD', '#FF8A7A', '#FFD65A', '#7EDC9A', '#C7A4FF', '#FF9AD5', '#6FD3F0'], hi = 0;
+  if (!reduce) setInterval(function () { hi = (hi + 1) % HUES.length; $('hero').style.background = HUES[hi]; }, 1300);
+  (function tv() {
+    var cv = $('tv'), cx = cv.getContext('2d'), w = cv.width, h = cv.height, img = cx.createImageData(w, h), d = img.data, last = 0;
+    function frame(t) {
+      if (t - last > 55) {
+        last = t;
+        var band = (t / 9) % h;
+        for (var p = 0; p < w * h; p++) {
+          var y = (p / w) | 0, v = Math.random() * 235 | 0;
+          if (Math.abs(y - band) < 3) v = Math.min(255, v + 60);
+          if (y % 2) v = v * .82 | 0;
+          d[p * 4] = d[p * 4 + 1] = d[p * 4 + 2] = v; d[p * 4 + 3] = 255;
+        }
+        cx.putImageData(img, 0, 0);
+      }
+      if (!reduce && !document.hidden) requestAnimationFrame(frame); else if (!reduce) setTimeout(function () { requestAnimationFrame(frame); }, 500);
+    }
+    requestAnimationFrame(frame);
+  })();
 
   // ---------- экраны ----------
   function show(name) {
@@ -335,102 +550,160 @@ footer b{color:#45454F}
     try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
   }
 
+  var timers = [];
+  function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
   function buildHouse() {
-    var svg = $('house'), ns = 'http://www.w3.org/2000/svg';
+    var svg = $('house'), ns = 'http://www.w3.org/2000/svg', floors = [];
     while (svg.childNodes.length > 1) svg.removeChild(svg.lastChild);
     for (var f = 0; f < 6; f++) {
       var y = 184 - f * 30, g = document.createElementNS(ns, 'g');
-      g.setAttribute('class', 'fl'); g.setAttribute('style', 'animation-delay:' + (f * 0.3) + 's');
+      g.setAttribute('class', 'fl');
       var r = document.createElementNS(ns, 'rect');
       r.setAttribute('x', 40); r.setAttribute('y', y); r.setAttribute('width', 120); r.setAttribute('height', 30);
-      r.setAttribute('fill', '#FFF'); r.setAttribute('stroke', '#111114'); r.setAttribute('stroke-width', 2); g.appendChild(r);
+      r.setAttribute('fill', '#1E2445'); r.setAttribute('stroke', '#454D82'); r.setAttribute('stroke-width', 2); g.appendChild(r);
       [52, 74, 96, 118, 138].forEach(function (x, j) {
         var w = document.createElementNS(ns, 'rect');
-        if (f === 0 && j === 2) { w.setAttribute('x', 92); w.setAttribute('y', y + 10); w.setAttribute('width', 16); w.setAttribute('height', 20); w.setAttribute('fill', '#111114'); }
-        else { w.setAttribute('x', x); w.setAttribute('y', y + 8); w.setAttribute('width', j === 4 ? 12 : 14); w.setAttribute('height', 14); w.setAttribute('fill', '#93AEFD'); }
+        if (f === 0 && j === 2) { w.setAttribute('x', 92); w.setAttribute('y', y + 10); w.setAttribute('width', 16); w.setAttribute('height', 20); w.setAttribute('fill', '#3B4270'); }
+        else { w.setAttribute('class', 'win'); w.setAttribute('x', x); w.setAttribute('y', y + 8); w.setAttribute('width', j === 4 ? 12 : 14); w.setAttribute('height', 14); }
         g.appendChild(w);
       });
-      svg.appendChild(g);
+      svg.appendChild(g); floors.push(g);
     }
     var roof = document.createElementNS(ns, 'g');
-    roof.setAttribute('class', 'fl'); roof.setAttribute('style', 'animation-delay:1.8s');
-    roof.innerHTML = '<rect x="36" y="26" width="128" height="8" fill="#111114"></rect><rect x="120" y="10" width="14" height="16" fill="#111114"></rect>';
+    roof.setAttribute('class', 'fl');
+    roof.innerHTML = '<rect x="36" y="26" width="128" height="8" fill="#454D82"></rect><rect x="120" y="10" width="14" height="16" fill="#454D82"></rect>';
     svg.appendChild(roof);
+    return { floors: floors, roof: roof };
   }
 
-  var timer = null, ticker = null;
-  $('f').addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (digits(S.inc) <= 0) { $('inc-err').hidden = false; $('q-inc').focus(); return; }
-    buildHouse();
-    var m = 0; $('load-text').textContent = LOAD_MSGS[0];
+  function submit() {
+    if (digits(S.inc) <= 0) { goStep(3, true); $('inc-err').hidden = false; $('q-inc').focus(); return; }
+    track('calc');
+    S.kids = 0;
+    timers.forEach(clearTimeout); timers = [];
+    var hs = buildHouse(), m = 0;
+    $('load-text').textContent = LOAD_MSGS[0];
     show('load');
-    clearInterval(ticker); clearTimeout(timer);
-    ticker = setInterval(function () { m = (m + 1) % 4; $('load-text').textContent = LOAD_MSGS[m]; }, 700);
-    timer = setTimeout(function () { clearInterval(ticker); renderResult(); show('res'); }, 2800);
-  });
+    var tick = setInterval(function () { m = (m + 1) % 4; $('load-text').textContent = LOAD_MSGS[m]; }, 600);
+    timers.push(tick);
+    var stepIn = reduce ? 0 : 80, stepLit = reduce ? 0 : 230;
+    hs.floors.forEach(function (g, f) { later(function () { g.classList.add('in'); }, f * stepIn); });
+    later(function () { hs.roof.classList.add('in'); }, 6 * stepIn);
+    var startLit = 6 * stepIn + 240;
+    hs.floors.forEach(function (g, n) { later(function () { g.classList.add('lit'); }, startLit + n * stepLit); });
+    later(function () { clearInterval(tick); renderResult(); show('res'); track('result'); }, startLit + 6 * stepLit + 380);
+  }
+  $('f').addEventListener('submit', function (e) { e.preventDefault(); submit(); });
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (ch) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]; }); }
+  var CHEV = '<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-  function renderResult() {
+  function renderResult(keepOpen) {
     var c = calc(), Hr = c.Hr, Hh = c.H, scale = Math.max(168, Hh);
-    var pct = function (x) { return (Math.max(0, x) / scale * 100).toFixed(2) + '%'; };
+    var pc = function (x) { return (Math.max(0, x) / scale * 100).toFixed(2) + '%'; };
     var norm = Math.min(40, Hh), over = Math.max(0, Math.min(Hh, 168) - 40), rest = Math.max(0, 168 - Hh), lack = Math.max(0, Hh - 168);
     var Nm = NAMES[S.type][1];
     var cap = c.noMortgage ? 'Взнос покрывает всю цену. Поздравляем, ты не целевая аудитория этого сайта.' : caption(Hr, S.pair, Nm, c.lastYear);
-    var facts = [
-      { v: rub(c.pay), l: 'платёж банку каждый месяц, ' + Y(S.years) },
-      { v: mln(c.interest), l: 'проценты банку, это ещё ' + dec(c.interest / c.price) + ' таких же квартир' },
-      { v: mln(c.price), l: NAMES[S.type][2] + ', ' + c.area + ' м², средняя цена в новостройке' }
-    ];
-    if (c.shortfall > 0) facts.push({ v: mln(c.shortfall), l: 'не хватает до первого взноса. Банк попросит не меньше 20%' });
-    var share = 'Чтобы ' + NAMES[S.type][2] + ' стала доступной, мне надо работать ' + Hr + ' ' + H(Hr) + ' в неделю, и так ' + Y(S.years) + '. ' + cap + ' Посчитай свои часы: ссылка в профиле @vlad.toka';
-    var kicker = c.noMortgage ? 'Ипотека не нужна' : 'Чтобы ипотека на ' + Y(S.years) + ' стала доступной, ' + (S.pair ? 'каждому из вас нужно работать' : 'работать нужно');
+    var emo = c.noMortgage ? 0 : bucket(Hr);
+    var kicker = c.noMortgage ? 'Ипотека не нужна' : 'Чтобы ' + (c.fam ? 'семейная ипотека' : 'ипотека') + ' на ' + Y(S.years) + ' стала доступной, ' + (S.pair ? 'каждому из вас нужно работать' : 'работать нужно');
     var bigNum = c.noMortgage ? '0' : num(Hr);
     var bigUnit = c.noMortgage ? 'часов сверху' : H(Hr) + ' в неделю' + (S.pair ? ' каждому' : '');
 
     var h = '';
-    h += '<div style="display:flex;flex-direction:column;gap:6px"><span class="kick">' + esc(kicker) + '</span>';
-    h += '<div class="big"><span class="n">' + esc(bigNum) + '</span><span class="u">' + esc(bigUnit) + '</span></div></div>';
+    h += '<div style="display:flex;flex-direction:column;gap:10px"><span class="kick">' + esc(kicker) + '</span>';
+    h += '<div class="big"><span class="n">' + esc(bigNum) + '</span><img class="emo" src="emoji/' + EMO[emo] + '.webp" width="96" height="96" alt="' + EMO_ALT[emo] + '"><span class="u">' + esc(bigUnit) + '</span></div>';
+    if (c.famBlocked) h += '<span class="famtag" style="background:#FFEDEA;color:#8A1F14">Семейную ипотеку на такую сумму не дадут: потолок ' + mln(c.famBlocked.cap) + '</span>';
+    if (c.fam) {
+      h += '<span class="famtag">Семейная ипотека, ' + S.kids + ' ' + plural(S.kids, 'ребенок', 'ребенка', 'детей') + ': ставка ' + pct(c.fam.rate) + (S.baseHr != null ? ' · без детей было ' + num(S.baseHr) + ' ' + H(S.baseHr) : '') + '</span>';
+    }
+    h += '</div>';
     h += '<p class="cap">' + esc(cap) + '</p>';
     if (!c.noMortgage) {
       h += '<div style="display:flex;flex-direction:column;gap:12px">';
       h += '<div class="bar" role="img" aria-label="Неделя: ' + Math.round(norm) + ' обычных часов, ' + Math.round(over) + ' сверху' + (lack > 0 ? ', не хватает ' + Math.round(lack) : '') + '">';
-      h += '<div style="left:0;width:' + pct(norm) + ';background:#111114"></div>';
-      h += '<div style="left:' + pct(norm) + ';width:' + pct(over) + ';background:#3A3AF4"></div>';
-      h += '<div style="left:' + pct(168) + ';width:' + pct(lack) + ';background:#FF4D3D"></div>';
-      h += '<div style="left:' + pct(168) + ';top:-4px;bottom:-4px;width:3px;background:#111114"></div></div>';
-      h += '<div class="ticks" aria-hidden="true"><span style="left:' + pct(40) + ';transform:translateX(-50%);text-align:center">40 ч<br>обычная неделя</span>';
-      h += '<span style="left:' + pct(168) + ';transform:translateX(-100%);text-align:right;padding-right:4px">168 ч<br>вся неделя</span></div>';
+      h += '<div style="left:0;width:' + pc(norm) + ';background:#111114"></div>';
+      h += '<div style="left:' + pc(norm) + ';width:' + pc(over) + ';background:#3A3AF4"></div>';
+      h += '<div style="left:' + pc(168) + ';width:' + pc(lack) + ';background:#FF4D3D"></div>';
+      h += '<div style="left:' + pc(168) + ';top:-4px;bottom:-4px;width:3px;background:#111114"></div></div>';
+      h += '<div class="ticks" aria-hidden="true"><span style="left:' + pc(40) + ';transform:translateX(-50%);text-align:center">40 ч<br>обычная неделя</span>';
+      h += '<span style="left:' + pc(168) + ';transform:translateX(-100%);text-align:right;padding-right:4px">168 ч<br>вся неделя</span></div>';
       h += '<div class="legend"><span><i style="background:#111114"></i>обычные ' + Math.round(norm) + ' ' + H(Math.round(norm)) + '</span>';
-      if (over > 0) h += '<span><i style="background:#3A3AF4"></i>сверху ещё ' + Math.round(over) + ' ' + H(Math.round(over)) + '</span>';
+      if (over > 0) h += '<span><i style="background:#3A3AF4"></i>сверху еще ' + Math.round(over) + ' ' + H(Math.round(over)) + '</span>';
       if (rest > 0) h += '<span><i style="background:#E9E9EF;box-shadow:inset 0 0 0 1px #C9C9D3"></i>на сон и жизнь ' + Math.round(rest) + ' ' + H(Math.round(rest)) + '</span>';
       if (lack > 0) h += '<span><i style="background:#FF4D3D"></i>не хватает ' + Math.round(lack) + ' ' + genH(Math.round(lack)) + '</span>';
       h += '</div></div>';
-      h += '<p class="p18">Или зарабатывать ' + (S.pair ? 'вдвоём ' : '') + 'от ' + rub(c.need) + ' в месяц на руки, в ' + dec(c.k) + ' раза больше, чем сейчас.</p>';
     }
+
+    if (!c.noMortgage) h += '<p class="p18 earn">' + (c.k > 1.005 ? 'Или зарабатывать ' + (S.pair ? 'вдвоем ' : '') + 'от ' + rub(c.need) + ' в месяц на руки — в ' + dec(c.k) + ' раза больше, чем сейчас.' : 'Дохода уже хватает: банку нужно от ' + rub(c.need) + ' в месяц на руки.') + '</p>';
+
+    // детали
+    var facts = [
+      { v: rub(c.pay), l: 'платеж банку каждый месяц, ' + Y(S.years) },
+      { v: mln(c.interest), l: 'проценты банку, это еще ' + dec(c.interest / c.price) + ' таких же квартир' },
+      { v: mln(c.price), l: NAMES[S.type][1].toLowerCase() + ', ' + c.area + ' м², средняя цена в новостройке' }
+    ];
+    if (c.shortfall > 0) facts.push({ v: mln(c.shortfall), l: 'не хватает до первого взноса. Обычно банк хочет не меньше 20%' });
+    if (c.fam && c.Lmkt > 0) facts.push({ v: mln(c.Lfam), l: 'по льготной ставке ' + pct(c.fam.rate) + ', остальные ' + mln(c.Lmkt) + ' — по рыночной ' + pct(RATE) });
+    h += '<details class="fold" id="det"' + (keepOpen && keepOpen.det ? ' open' : '') + '><summary>Детали ' + CHEV + '</summary><div class="fold-body">';
     h += '<div class="facts">';
     facts.forEach(function (f) { h += '<div class="fact"><b>' + esc(f.v) + '</b><span>' + esc(f.l) + '</span></div>'; });
-    h += '</div>';
-    var cmpLabel = c.avgH ? (S.pair ? 'С двумя средними зарплатами по региону вышло бы' : 'Со средней зарплатой по региону вышло бы') : 'Средней зарплаты по региону нет в данных';
-    var cmpVal = c.avgH ? num(c.avgH) + ' ' + H(Math.round(c.avgH)) + (S.pair ? ' каждому' : '') : '—';
-    h += '<div class="cmp"><span>' + esc(cmpLabel) + '</span><span class="pill">' + esc(cmpVal) + '</span></div>';
-    h += '<div style="display:flex;flex-direction:column;gap:10px"><div class="acts">';
-    h += '<button type="button" class="b1" id="copy">Скопировать результат</button><button type="button" class="b2" id="again">Пересчитать</button></div>';
-    h += '<span role="status" class="hint" id="copy-msg"></span>';
-    h += '<div class="share" id="share-text">' + esc(share) + '</div></div>';
-    h += '<div class="bridge"><b>Это калькулятор из ролика @vlad.toka</b>';
-    h += '<span>Там я считаю свою ипотеку и разбираю, откуда такие цифры. Ещё больше странных расчётов — в профиле.</span>';
-    h += '<a href="https://www.instagram.com/vlad.toka/" target="_blank" rel="noopener">Подписаться на @vlad.toka</a></div>';
+    h += '</div></div></details>';
+
+    // хотите работать меньше
+    if (!c.noMortgage && FAMILY) {
+      var kv = S.kids || 2;
+      h += '<details class="fold" id="kids"' + (keepOpen && keepOpen.kids ? ' open' : '') + '><summary><img src="emoji/baby.webp" width="34" height="34" alt="">Хотите работать меньше? ' + CHEV + '</summary><div class="fold-body">';
+      h += '<p class="p18"><b>Заведите детей.</b> Тогда вам будет доступна семейная ипотека: ставка ниже, платеж меньше.</p><p class="p18" style="font-weight:700">Сколько детей заводим?</p>';
+      h += '<div class="kids-row" id="kids-row" aria-hidden="true"></div>';
+      h += '<div class="kid-wrap"><input class="kid-range" id="kid-n" type="range" min="1" max="5" step="1" value="' + kv + '" aria-label="Сколько детей заводим"><div class="kid-ticks" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div>';
+      h += '<span class="hint" id="kid-hint"></span>';
+      h += '<div><button type="button" class="b1" id="kid-go">Пересчитать</button>' + (c.fam ? ' <button type="button" class="b2" id="kid-off">Без детей</button>' : '') + '</div>';
+      h += '</div></details>';
+    }
+
+    h += '<div><button type="button" class="b2" id="again">Посчитать заново</button></div>';
+
+    // подписка — раньше копирования
+    h += '<div class="bridge"><img src="vlad.webp" width="88" height="88" alt="Влад Токарев"><div class="bt"><b>Привет, я Влад, автор этого сайта</b>';
+    h += '<span>Журналист из Петербурга. Рассказываю истории, о которых вам стоит знать.</span></div>';
+    h += '<a href="https://www.instagram.com/vlad.toka/" target="_blank" rel="noopener" id="sub">Подписаться в Instagram</a></div>';
+
+    // копирование
+    var share = c.noMortgage ? 'Мне ипотека не нужна: взнос покрывает всю цену. Посчитай свои часы: vladtoka.pro/ipoteka'
+      : 'Чтобы позволить себе ' + (c.fam ? 'семейную ипотеку' : 'ипотеку') + ' на ' + NAMES[S.type][2] + ', ' + (S.pair ? 'нам нужно работать по ' + Hr + ' ' + H(Hr) + ' в неделю каждому' : 'мне нужно работать ' + Hr + ' ' + H(Hr) + ' в неделю') + '. Посчитай свои часы: vladtoka.pro/ipoteka';
+    h += '<div class="share-box"><div><button type="button" class="linkbtn" id="copy">Скопировать результат</button></div>';
+    h += '<span role="status" class="hint" id="copy-msg"></span><div class="share" id="share-text">' + esc(share) + '</div></div>';
     $('res').innerHTML = h;
 
-    $('again').addEventListener('click', function () { show('form'); });
-    $('copy').addEventListener('click', function () { copyText(share); });
+    $('again').addEventListener('click', function () { track('again'); S.kids = 0; S.baseHr = null; goStep(1, false); show('form'); });
+    $('copy').addEventListener('click', function () { track('copy'); copyText(share); });
+    $('sub').addEventListener('click', function () { track('subscribe'); });
+    $('det').addEventListener('toggle', function () { if (this.open) track('details_open', true); });
+    if ($('kids')) {
+      var kn = $('kid-n');
+      var paintKids = function () {
+        var n = +kn.value, row = $('kids-row'); row.innerHTML = '';
+        for (var j = 0; j < n; j++) { var im = document.createElement('img'); im.src = 'emoji/baby.webp'; im.alt = ''; im.style.animationDelay = (j * 60) + 'ms'; row.appendChild(im); }
+        var f = family(n, c.reg[0]);
+        $('kid-hint').textContent = !f ? '' : (c.L > f.cap ? 'Кредит ' + mln(c.L) + ' — больше потолка программы ' + mln(f.cap) + ': семейную ипотеку на такую квартиру не дадут.' : n + (n >= 5 ? ' и больше' : '') + ' ' + plural(n, 'ребенок', 'ребенка', 'детей') + ' — ставка ' + pct(f.rate) + ' на сумму до ' + mln(f.limit) + (c.L > f.limit ? ', остальное — по рыночной ' + pct(RATE) : '') + '.');
+      };
+      kn.addEventListener('input', paintKids); paintKids();
+      $('kids').addEventListener('toggle', function () { if (this.open) track('kids_open', true); });
+      $('kid-go').addEventListener('click', function () {
+        track('kids_recalc');
+        if (!S.kids) S.baseHr = Hr;
+        S.kids = +kn.value; renderResult({ det: $('det').open, kids: true });
+        $('res').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      if ($('kid-off')) $('kid-off').addEventListener('click', function () { S.kids = 0; S.baseHr = null; renderResult({ det: $('det').open, kids: true }); });
+    }
   }
+
+  $('src').addEventListener('toggle', function () { if (this.open) track('sources_open', true); });
 
   function copyText(t) {
     var msg = $('copy-msg');
-    var ok = function () { msg.textContent = 'Скопировано. Вставь в комментарий под роликом.'; };
+    var ok = function () { msg.textContent = 'Скопировано. Можно вставить в комментарий под роликом.'; };
     var fallback = function () {
       try {
         var ta = document.createElement('textarea');
